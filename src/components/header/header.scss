@@ -1,53 +1,58 @@
 @use "../../scss/" as *;
 
+//REVISADO
 .logo {
-    font-size: 2.5rem;
-    font-weight: 600;
-
-    @include flex(center, unset);
+    font-size: 40px;
+    font-weight: 729;
+    display: flex; //Muy imporante utlizar el flex, si no colorara al igual que el texto, es decir la imagen se podria distorsionar
+    align-items: center; //Para que quede al mismo nivel que el texto
 
     img {
-        margin-right: 10px;
-        width: 50px;
-
-        @include mobile {
-            width: 30px;
-            margin-right: 0;
+        margin-right: 10px; //Separacion entre la imagen y el titulo
+        width: 69px;
+    }
+    @media only screen and (max-width: 425px) {
+        z-index: 1;
+        font-size: 18px;
+        font-weight: 729;
+        img {
+            margin-right: 10px; //Separacion entre la imagen y el titulo
+            width: 0px;
         }
     }
 }
+//REVISADO
 
 .header {
-    height: $header-height;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99;
-    transition: height 0.3s ease, background-color 0.3s ease;
+    height: 128px;
+    position: fixed; //Asi se consigue que el texto no se mueva y se quede encima de la imagen
+    width: 100%; //Necesario si queremos seperar todas las partes del Header
+    z-index: 2; //Muy importante, si es muy bajo el Home se come el Header
 
     &.shrink {
-        height: $header-shrink-height;
-        background-color: $body-bg;
+        background-color: black; //Cuando scroleamos, esta linea hace que el fondo sea negro
     }
 
     &__wrap {
-        @include flex(center, space-between);
+        display: flex;
+        justify-content: space-between; //Provocamos que la separacion sea entre ambos componentes
         height: 100%;
-        padding: 0 2rem;
+        padding: 1.4rem; //Separacion fuera de movil entre el titulo y las categorias muy imporate, cuanto menos valor mas separacion
 
-        @include mobile {
+        @media only screen and (max-width: 425px) {
+            //Con esto conseguimos que la version movil, la cabecera se quede centrada
             justify-content: center;
         }
     }
 
     &__nav {
-        @include flex(center, unset);
+        display: flex;
+        align-items: center;
 
         & > * ~ * {
-            margin-left: 2rem;
+            margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si
         }
-
+        //Muy imporante a partir de aqui se cargan
         li {
             padding: 5px 0;
             font-weight: 700;
@@ -56,36 +61,35 @@
 
             &::after {
                 content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                transition: width 0.5s ease;
-                height: 2px;
-                background-color: $main-color;
+                position: absolute; //Muy importante sin esta propiedad, da lo mismo lo que hagas que puede aparecer en cualquier lado de la pagina
+                left: 50%; //Prueba y error, hasta que al final pillar la cantidad
+                transform: translateX(-50%); //Prueba y error, hasta que al final pillar la cantidad
+                width: 0; //Hacemos que no exista
+                transition: width 0.3s ease; //Un simple detalle de transicion que me gusta darle, como si se abrir un telon
+                height: 40px;
+                background: black;
+                z-index: -1; //Muy importante ya que si no, no podremos hacer que aparezca detras del componente
             }
 
             &.active::after,
             &:hover::after {
-                width: 100%;
+                background-color: black;
+                width: 110%; //Una vez que ya le demos clic, este se quedara seleccionado
+                z-index: -1; //Muy importante ya que si no, no podremos hacer que aparezca detras del componente
             }
         }
 
-        @include mobile {
+        @media only screen and (max-width: 425px) {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 5rem;
-            width: 100%;
-            background-color: $body-bg;
+            width: 80%;
             padding: 0 2rem;
-            box-shadow: $box-shadow;
-
-            @include flex(center, space-between);
-
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
             & > * ~ * {
-                margin-left: 0;
+                margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si
+
             }
         }
     }
