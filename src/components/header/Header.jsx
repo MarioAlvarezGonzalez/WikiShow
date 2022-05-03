@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import './header.scss';
 
-import logo from '../../assets/tmovie.png';
+import logo from '../../assets/Logo.JPG';
 
 const headerNav = [
     {
@@ -35,7 +35,7 @@ const Header = () => {
 
     useEffect(() => {
         const shrinkHeader = () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            if (document.documentElement.scrollTop > 10) {
                 headerRef.current.classList.add('shrink');
             } else {
                 headerRef.current.classList.remove('shrink');
