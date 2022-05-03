@@ -1,11 +1,15 @@
+//Importamos todas las librerias que necesitamos
+
 import React, { useRef, useEffect } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 
+//Importamos el CSS del header
 import './header.scss';
-
+//Declaramos que queremos el logo a un ruta de la carpeta
 import logo from '../../assets/Logo.JPG';
 
+//Aqui hablamos de las diferentes categorais que se mostraran en el Header
 const headerNav = [
     {
         display: 'Home',
@@ -29,10 +33,16 @@ const headerNav = [
 const Header = () => {
 
     const { pathname } = useLocation();
-    const headerRef = useRef(null);
+    //El enlace useLocation devuelve el objeto de ubicación que representa la URL actual. 
+    //Puede pensar en ello como un estado de uso que devuelve una nueva ubicación cada vez que cambia la URL.
+    const headerRef = useRef(null); 
+    //Con esto pillamos la referencia al Header para posteriormente llamarlo a modificar
 
-    const active = headerNav.findIndex(e => e.path === pathname);
+    const active = headerNav.findIndex(index => index.path === pathname);
+    //El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. 
+    //En caso contrario devuelve -1.
 
+    
     useEffect(() => {
         const shrinkHeader = () => {
             if (document.documentElement.scrollTop > 10) {
@@ -54,12 +64,13 @@ const Header = () => {
                     <img src={logo} alt="" />
                     <Link to="/">WiKiSHOW</Link>
                 </div>
+                
                 <ul className="header__nav">
                     {
-                        headerNav.map((e, i) => (
-                            <li key={i} className={`${i === active ? 'active' : ''}`}>
-                                <Link to={e.path}>
-                                    {e.display}
+                        headerNav.map((index) => (
+                            <li key={index}>
+                                <Link to={index.path}>
+                                    {index.display}
                                 </Link>
                             </li>
                         ))
