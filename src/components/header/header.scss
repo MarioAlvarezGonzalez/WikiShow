@@ -4,7 +4,7 @@
 .logo {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
-    font-weight: 729;
+    font-weight: 900;
     display: flex; //Muy imporante utlizar el flex, si no colorara al igual que el texto, es decir la imagen se podria distorsionar
     align-items: center; //Para que quede al mismo nivel que el texto
 
@@ -12,10 +12,10 @@
         margin-right: 10px; //Separacion entre la imagen y el titulo
         width: 69px;
     }
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 768px) {
         z-index: 1;
         font-size: 18px;
-        font-weight: 729;
+        font-weight: 900;
         img {
             margin-right: 10px; //Separacion entre la imagen y el titulo
             width: 0px;
@@ -32,8 +32,9 @@
     z-index: 2; //Muy importante, si es muy bajo el Home se come el Header
 
     &.shrink {
-        height: 15%;
-        background-color: black;
+        height: 14.7%;
+        opacity: 0.9;
+        background-color: #0f0f0f;
        
     }
     
@@ -45,7 +46,7 @@
         height: 100%;
         padding: 5rem; //Separacion fuera de movil entre el titulo y las categorias muy imporate, cuanto menos valor mas separacion
 
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 768px) {
             //Con esto conseguimos que la version movil, la cabecera se quede centrada
             justify-content: center;
         }
@@ -61,7 +62,7 @@
         //Muy imporante a partir de aqui se cargan
         li {
             padding: 5px 0;
-            font-weight: 700;
+            font-weight: 900;
             position: relative;
             font-size: 1.5rem;
 
@@ -85,7 +86,7 @@
             }
         }
         //Tras una serie de problemas, he decidido hacer el header abajo como en las versiones de movil
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 768px) {
             font-family: Arial, Helvetica, sans-serif;
             position: fixed;
             bottom: 0;

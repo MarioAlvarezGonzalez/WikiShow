@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router';
 import './movie-grid.scss';
 
 import MovieCard from '../movie-card/MovieCard';
-import Button, { OutlineButton } from '../button/Boton';
+import Button from '../button/Boton';
 import Input from '../input/Input'
 
 import tmdbApi, { category, movieType, tvType, personType } from '../../api/tmdbApi';
@@ -90,7 +90,7 @@ const MovieGrid = props => {
             {
                 page < totalPage ? (
                     <div className="movie-grid__loadmore">
-                        <OutlineButton className="small" onClick={loadMore}>Load more</OutlineButton>
+                        <Button className="small" onClick={loadMore}>Load more</Button>
                     </div>
                 ) : null
             }

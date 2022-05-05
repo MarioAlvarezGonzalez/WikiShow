@@ -1,32 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './boton.scss';
 
 const Button = props => {
     return (
         <button
-            className={`btn ${props.className}`}
-            onClick={props.onClick ? () => props.onClick() : null}
+            className={`btn ${props.className}`} //Con esta propiedad hacemos todos los btn que existen, tengan su bootrap y los colocamos con children
+            onClick={props.onClick ? () => props.onClick() : null} //Con esto llamamos a la propiedad Onclick, si no esta clickead sera null, y si esta pues realizara la propiedad onClik
         >
             {props.children}
         </button>
     );
 }
-
-export const OutlineButton = props => {
-    return (
-        <Button
-            className={`btn-outline ${props.className}`}
-            onClick={props.onClick ? () => props.onClick() : null}
-        >
-            {props.children}
-        </Button>
-    );
-}
-
-Button.propTypes = {
-    onClick: PropTypes.func
-}
-
 export default Button;

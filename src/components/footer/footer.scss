@@ -2,38 +2,41 @@
 
 .footer {
     position: relative;
-    padding: 6rem 2rem;
+    padding: 6rem 8rem;
+    background-size: cover; //Con esta propiedad conseguimos que ocupe todo el tamaño de la pantalla
+    background-repeat: no-repeat; //Con esto obligamos que no se repita
     background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     &__content {
-        max-width: 1000px;
+        max-width: 1000px; //Con esto obligamos que no se expanda mas de 1000px, asi queda todo centrado
 
         &__logo {
-            @include flex(center, center);
-            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 43px; //Separarlo del bottom
         }
 
         &__menus {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);//Con esto conseguimos 3 columnas que se repiten con un fila para cada uno
 
-            @include mobile {
-                grid-template-columns: repeat(2, 1fr);
+            @media only screen and (max-width: 768px) { 
+                grid-template-columns: repeat(2, 1fr);//En caso de movil 2 filas
             }
         }
 
         &__menu {
-            @include flex(flex-start, flex-start);
+            margin-top: 4px;
+            display: flex;
+            align-items: flex-start; //Con esto le decimos que se ordene y se coloce en orden de inicio, en forma de columnas
+            justify-content: flex-start;
             flex-direction: column;
-            margin-top: 1rem;
-
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
 
             & > * ~ * {
-                margin-top: 1rem;
+                margin-top: 16px; //Importante con esto separamos entre si cada categoria entre si es decir entre cada flex
             }
         }
     }

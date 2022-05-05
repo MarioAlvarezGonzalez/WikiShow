@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { OutlineButton } from '../components/button/Boton';
+import Button from '../components/button/Boton';
 import HeroSlide from '../components/hero-slide/HeroSlide';
 import MovieList from '../components/movie-list/MovieList';
 
@@ -16,7 +16,7 @@ const Home = () => {
                     <div className="section__header mb-2">
                         <h2>Trending Movies</h2>
                         <Link to="/movie">
-                            <OutlineButton className="small">View more</OutlineButton>
+                            <Button className="small">View more</Button>
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.popular}/>
@@ -26,7 +26,7 @@ const Home = () => {
                     <div className="section__header mb-2">
                         <h2>Top Rated Movies</h2>
                         <Link to="/movie">
-                            <OutlineButton className="small">View more</OutlineButton>
+                            <Button className="small">View more</Button>
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.top_rated}/>
@@ -36,7 +36,7 @@ const Home = () => {
                     <div className="section__header mb-2">
                         <h2>Trending TV</h2>
                         <Link to="/tv">
-                            <OutlineButton className="small">View more</OutlineButton>
+                            <Button className="small">View more</Button>
                         </Link>
                     </div>
                     <MovieList category={category.tv} type={tvType.popular}/>
@@ -46,7 +46,7 @@ const Home = () => {
                     <div className="section__header mb-2">
                         <h2>Top Rated TV</h2>
                         <Link to="/tv">
-                            <OutlineButton className="small">View more</OutlineButton>
+                            <Button className="small">View more</Button>
                         </Link>
                     </div>
                     <MovieList category={category.tv} type={tvType.top_rated}/>

@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //Importamos el CSS del header
 import './header.scss';
@@ -32,17 +32,12 @@ const headerNav = [
 
 const Header = () => {
 
-    const { pathname } = useLocation();
-    //El enlace useLocation devuelve el objeto de ubicación que representa la URL actual. 
-    //Puede pensar en ello como un estado de uso que devuelve una nueva ubicación cada vez que cambia la URL.
     const headerRef = useRef(null); 
     //Con esto pillamos la referencia al Header para posteriormente llamarlo a modificar
 
-    const active = headerNav.findIndex(index => index.path === pathname);
     //El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. 
     //En caso contrario devuelve -1.
 
-    
     useEffect(() => {
         const shrinkHeader = () => {
             if (document.documentElement.scrollTop > 10) {
