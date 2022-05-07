@@ -1,50 +1,45 @@
 @use "../../scss/" as *;
 
-//REVISADO
 .logo {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    font-weight: 900;
+    font-size: 29px;
+    font-weight: 800;
+
     display: flex; //Muy imporante utlizar el flex, si no colorara al igual que el texto, es decir la imagen se podria distorsionar
     align-items: center; //Para que quede al mismo nivel que el texto
+    text-align: unset;
 
     img {
-        margin-right: 10px; //Separacion entre la imagen y el titulo
-        width: 69px;
-    }
-    @media only screen and (max-width: 768px) {
-        z-index: 1;
-        font-size: 18px;
-        font-weight: 900;
-        img {
-            margin-right: 10px; //Separacion entre la imagen y el titulo
-            width: 0px;
+        margin-right: 10px;
+        width: 50px;
+
+        @media only screen and (max-width: 768px) {
+            width: 40px;
+            margin-right: 0;
         }
     }
 }
-//REVISADO
 
 .header {
     font-family: Arial, Helvetica, sans-serif;
     height: 128px;
+    //opacity: 0.9; Me arrepenti
     position: fixed; //Asi se consigue que el texto no se mueva y se quede encima de la imagen
     width: 100%; //Necesario si queremos seperar todas las partes del Header
     z-index: 2; //Muy importante, si es muy bajo el Home se come el Header
+    transition: height 0.4s ease, background-color 0.3s ease;
 
     &.shrink {
-        height: 14.7%;
-        opacity: 0.9;
+        height: 5rem;
         background-color: #0f0f0f;
-       
     }
-    
-    
 
     &__wrap {
         display: flex;
+        align-items: center;
         justify-content: space-between; //Provocamos que la separacion sea entre ambos componentes
         height: 100%;
-        padding: 5rem; //Separacion fuera de movil entre el titulo y las categorias muy imporate, cuanto menos valor mas separacion
+        padding: 0 2rem; //Separacion entre el titulo y las categorias muy importante, cuanto menos valor mas separacion
 
         @media only screen and (max-width: 768px) {
             //Con esto conseguimos que la version movil, la cabecera se quede centrada
@@ -55,11 +50,12 @@
     &__nav {
         display: flex;
         align-items: center;
+        justify-content: unset;
 
         & > * ~ * {
             margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si
         }
-        //Muy imporante a partir de aqui se cargan
+
         li {
             padding: 5px 0;
             font-weight: 900;
@@ -68,23 +64,24 @@
 
             &::after {
                 content: "";
-                position: absolute; //Muy importante sin esta propiedad, da lo mismo lo que hagas que puede aparecer en cualquier lado de la pagina
-                left: 50%; //Prueba y error, hasta que al final pillar la cantidad
+                position: absolute; //Muy importante sin esta propiedad, da lo mismo lo que hagas que puede aparecer en cualquier lado de la pagina                 left: 50%;
                 transform: translateX(-50%); //Prueba y error, hasta que al final pillar la cantidad
+                left: 50%; //Con esto lo colocamos donde queremos
                 width: 0; //Hacemos que no exista
-                transition: width 0.3s ease; //Un simple detalle de transicion que me gusta darle, como si se abrir un telon
+                transition: width 0.4s ease; //Un simple detalle de transicion que me gusta darle, como si se abrir un telon
                 height: 40px;
-                background: black;
+                background: #0f0f0f;
                 z-index: -1; //Muy importante ya que si no, no podremos hacer que aparezca detras del componente
             }
 
             &.active::after,
             &:hover::after {
-                background-color: black;
-                width: 110%; //Una vez que ya le demos clic, este se quedara seleccionado
+                background-color: #0f0f0f;
+                width: 105%; //Una vez que ya le demos clic, este se quedara seleccionado
                 z-index: -1; //Muy importante ya que si no, no podremos hacer que aparezca detras del componente
             }
         }
+
         //Tras una serie de problemas, he decidido hacer el header abajo como en las versiones de movil
         @media only screen and (max-width: 768px) {
             font-family: Arial, Helvetica, sans-serif;
@@ -95,15 +92,14 @@
             bottom: 0;
             height: 5rem;
             width: 100%;
-            background-color: black;
+            background-color: #0f0f0f;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
+
             & > * ~ * {
                 margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si en la version movil
-
             }
         }
     }

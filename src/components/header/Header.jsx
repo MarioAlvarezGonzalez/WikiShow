@@ -10,7 +10,7 @@ import './header.scss';
 import logo from '../../assets/Logo.JPG';
 
 //Aqui hablamos de las diferentes categorais que se mostraran en el Header
-const headerNav = [
+const header = [
     {
         display: 'Home',
         path: '/'
@@ -62,7 +62,7 @@ const Header = () => {
                 
                 <ul className="header__nav">
                     {
-                        headerNav.map((index) => (
+                        header.map((index) => (
                             <li key={index}>
                                 <Link to={index.path}>
                                     {index.display}
