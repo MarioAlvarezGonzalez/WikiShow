@@ -1,51 +1,51 @@
 @use "../../scss/" as *;
 
 .modal {
-    @include flex(center, center);
-    position: fixed;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;  //Importante sin esta propiedad no sale el trailer
+    z-index: 4;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    overflow: auto;
-    background-color: rgba($color: $black, $alpha: 0.4);
-    opacity: 0;
-    visibility: hidden;
+    bottom: 0; //Importante poner estas propiedades en 0, para que este en el centro
+    opacity: 0; //De inicio no aparecera y una vez clicemos aparecera
+    background-color: rgba($color: $black, $alpha: 0.8);
+    visibility: hidden; //Muy importante si no estara en negro, por defecto esta oculto el trailer
 
     &.active {
-        opacity: 1;
-        visibility: visible;
+        opacity: 1; //Aparece, todo el conjunto de cosas, no solo el video todos los componentes que componen esa accion
+        visibility: visible; //Visible si activamos el boton
     }
 
     &__content {
-        padding: 2rem;
-        background-color: $body-bg;
-        width: 50%;
+        padding: 0.9rem;
+        background-color: black; //Para que el trailer no quede "feo" le añado un borde con el padding y un color negro
+        width: 60%;
         opacity: 0;
-        transform: translateY(-250px);
-        transition: transform 0.6s ease, opacity 0.6s ease;
-        position: relative;
+        transition: opacity 0.9s ease;
 
-        @include tablet {
+        @media only screen and (max-width: 768px) {
             width: 80%;
         }
 
+        //Esto es el css de la x del reproductor del video
         &__close {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            font-size: 1.5rem;
-            cursor: pointer;
+            position: absolute; //Siempre este situado y nunca se mueva
+            right: 1px; //Ensayo y error
+            top: -3px; //Ensayo y error
+            font-size: 2rem;
+            cursor: pointer; //Que 
 
             &:hover {
-                color: $main-color;
+                color: red;
             }
         }
     }
 
-    &.active &__content {
-        opacity: 1;
-        transform: translateY(0);
+    &.active &__content { 
+        opacity: 1; //Para que aparezca el video, si no carga el resto de cosas pero el video en si no se podra ver, pero si reproducir
+        transform: translateY(0); //Para que la X se quede en la esquina del video y no de la pantalla
     }
 }

@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import './modal.scss';
 
 const Modal = props => {
 
-    const [active, setActive] = useState(false);
-
-    useEffect(() => {
-        setActive(props.active);
-    }, [props.active]);
+    //Decimos que el estado del trailer , es inactivo
+    const [active] = useState(false);
 
     return (
         <div id={props.id} className={`modal ${active ? 'active' : ''}`}>
@@ -18,20 +14,18 @@ const Modal = props => {
     );
 }
 
-Modal.propTypes = {
-    active: PropTypes.bool,
-    id: PropTypes.string
-}
-
 export const ModalContent = props => {
+
 
     const contentRef = useRef(null);
 
+    //Importante si esta propiedad si cerramos el trailer, se seguira reproduciendo en segundo plano
     const closeModal = () => {
         contentRef.current.parentNode.classList.remove('active');
         if (props.onClose) props.onClose();
     }
 
+    //Con este return conseguimos que apareza el trailer
     return (
         <div ref={contentRef} className="modal__content">
             {props.children}
@@ -41,9 +35,4 @@ export const ModalContent = props => {
         </div>
     )
 }
-
-ModalContent.propTypes = {
-    onClose: PropTypes.func
-}
-
 export default Modal;

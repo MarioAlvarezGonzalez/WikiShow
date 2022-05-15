@@ -1,11 +1,11 @@
 @use "../../scss/variables" as *;
-
+//Son todas las propiedades input de la busqueda
 input {
     border: 0;
-    background-color: $black;
+    background-color: black;
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
-    border-radius: $border-radius;
-    color: $txt-color;
-    font-family: $font-family;
+    border-radius: 30px/20px;
+    color: whitesmoke;
+    font-family:'Source Sans Pro';
 }

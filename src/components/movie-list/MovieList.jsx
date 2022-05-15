@@ -5,7 +5,6 @@ import './movie-list.scss';
 
 import { SwiperSlide, Swiper } from 'swiper/react';
 
-
 import tmdbApi, { category } from '../../api/tmdbApi';
 
 import MovieCard from '../movie-card/MovieCard';
@@ -34,8 +33,7 @@ const MovieList = props => {
             setItems(response.results);
         }
         getList();
-    }
-    );
+    },[]);
 
     return (
         <div className="movie-list">
