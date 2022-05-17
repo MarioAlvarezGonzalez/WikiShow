@@ -2,12 +2,13 @@
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 20px;
     margin-bottom: 3rem;
 
-    @include tablet {
+    @media only screen and (max-width: 768px) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
     }
 
     &__loadmore {
@@ -18,11 +19,25 @@
 .movie-search {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
+    margin-left: 33%;
+
+    @media only screen and (max-width: 1336px) {
+        margin-left: 28%;
+
+    }
+    @media only screen and (max-width: 768px) {
+        margin-left: 10%;
+
+    }
+    @media only screen and (max-width: 425px) {
+        margin-left: 0%;
+
+    }
 
     input {
         width: 100%;
-        padding-right: 8rem;
+        text-align: left;
     }
 
     button {
@@ -30,9 +45,10 @@
         right: 0;
         top: 2px;
 
-        @include mobile {
+         @media only screen and (max-width: 425px) {
             right: 1px;
             top: 1px;
         }
     }
+
 }

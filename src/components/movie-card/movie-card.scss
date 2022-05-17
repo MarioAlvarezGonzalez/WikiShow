@@ -1,19 +1,17 @@
 @use "../../scss/" as *;
 
-
 .movie-card {
     position: relative;
-    background-position: top;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom; //Para que quede centrado la imagen de fondo
     border-radius: 30px/20px;
-    margin-bottom: 1rem;
 
     .btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
+        position: absolute; //Muy imporante si cambiamos esto no se quedara absoluta y podra cambiar por otro componentes
+        top: 50%; //Importante tenia puesto px, pero si queremos que sera responsivo necesitamos porcentajes
+        left: 50%; //Importante tenia puesto px, pero si queremos que sera responsivo necesitamos porcentajes
+        //Una transofacion de aparecer el boton si estas encima y desaparece si te sales
+        transform: translate(-50%) scale(0);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -24,26 +22,24 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background-color: $black;
-        opacity: 0;
+        background-color: black;
+        opacity: 0; //Si no ponemos estra es la propiedad, esta el fondo siempre en negro
         transition: opacity 0.3s ease;
-        border-radius: $border-radius;
+        border-radius: 30px/20px;
     }
 }
 .person-card {
     position: relative;
-    background-position: top;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
     padding-top: 200%;
-    border-radius: $border-radius;
-    margin-bottom: 1rem;
+    border-radius: 30px/20px;
 
     .btn {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%) scale(0);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -54,20 +50,17 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background-color: $black;
+        background-color: black;
         opacity: 0;
         transition: opacity 0.3s ease;
         border-radius: 30px/20px;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-        &:hover::before {
-            opacity: 0.8;
-        }
+    &:hover::before {
+        opacity: 0.91;
+    }
 
-        &:hover .btn {
-            transform: translate(-50%, -50%) scale(1);
-        }
+    &:hover .btn {
+        transform: translate(-50%, -50%) scale(1);
     }
 }
-

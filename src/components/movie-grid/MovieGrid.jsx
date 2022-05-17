@@ -20,7 +20,7 @@ const MovieGrid = props => {
 
     useEffect(() => {
         const getList = async () => {
-            let response = null;
+            let response = "";
             if (keyword === undefined) {
                 const params = {};
                 switch (props.category) {
@@ -49,7 +49,7 @@ const MovieGrid = props => {
     }, [props.category, keyword]);
 
     const loadMore = async () => {
-        let response = null;
+        let response = "";
         if (keyword === undefined) {
             const params = {
                 page: page + 1
@@ -79,7 +79,7 @@ const MovieGrid = props => {
 
     return (
         <>
-            <div className="section mb-3">
+            <div className="section mb-2">
                 <MovieSearch category={props.category} keyword={keyword} />
             </div>
             <div className="movie-grid">
@@ -92,7 +92,7 @@ const MovieGrid = props => {
                     <div className="movie-grid__loadmore">
                         <Button className="small" onClick={loadMore}>Load more</Button>
                     </div>
-                ) : null
+                ) : ""
             }
         </>
     );
