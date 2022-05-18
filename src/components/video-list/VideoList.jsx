@@ -6,14 +6,14 @@ import tmdbApi from '../../api/tmdbApi';
 
 const VideoList = props => {
 
-    const {category} = useParams();
+    const { category } = useParams();
 
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
         const getVideos = async () => {
             const res = await tmdbApi.getVideos(category, props.id);
-            setVideos(res.results.slice(0, 5));
+            setVideos(res.results.slice(0, 4));
         }
         getVideos();
     }, [category, props.id]);
@@ -22,7 +22,7 @@ const VideoList = props => {
         <>
             {
                 videos.map((item, i) => (
-                    <Video key={i} item={item}/>
+                    <Video key={i} item={item} />
                 ))
             }
         </>
@@ -35,15 +35,16 @@ const Video = props => {
 
     const iframeRef = useRef(null);
 
+    //Ensayo y error del tañamo del video
     useEffect(() => {
-        const height = iframeRef.current.offsetWidth * 9 / 16 + 'px';
+        const height = iframeRef.current.offsetWidth * 7.6 / 16 + 'px';
         iframeRef.current.setAttribute('height', height);
     }, []);
 
     return (
         <div className="video">
             <div className="video__title">
-                <h2>{item.name}</h2>
+                <h2 className='name-card'>{item.title || item.name}</h2>
             </div>
             <iframe
                 src={`https://www.youtube.com/embed/${item.key}`}

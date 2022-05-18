@@ -30,7 +30,7 @@ const MovieCard = props => {
                 </Button>
             </div>
             </div>
-            <h2>{item.title || item.name}</h2> 
+            <h2 className='name-card'>{item.title || item.name}</h2> 
         </Link>
     );
 }

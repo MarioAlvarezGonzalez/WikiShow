@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 
 import PageHeader from '../components/page-header/PageHeader';
 
-import { category as cate } from '../api/tmdbApi';
 import MovieGrid from '../components/movie-grid/MovieGrid';
 
 
