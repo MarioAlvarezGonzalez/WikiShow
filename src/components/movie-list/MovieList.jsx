@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import Button from '../../components/button/Boton';
 
 import './movie-list.scss';
 
@@ -33,30 +34,41 @@ const MovieList = props => {
             setItems(response.results);
         }
         getList();
-    },[]);
+    }, []);
 
     return (
-        <div className="movie-list">
-            <Swiper
-                grabCursor={true}
-                spaceBetween={10}
-                slidesPerView={'auto'}
-            >
-                {
-                    items.map((item, i) => (
-                        <SwiperSlide key={i}>
-                            <MovieCard item={item} category={props.category} />
-                        </SwiperSlide>
-                    ))
-                }
-            </Swiper>
-        </div>
+        <>
+            <div className="movie-list">
+                <Swiper
+                    grabCursor={true}
+                    spaceBetween={10}
+                    slidesPerView={'auto'}
+                >
+                    {
+                        items.map((item, i) => (
+                            <SwiperSlide key={i}>
+                                <MovieCard item={item} category={props.category} />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
+            </div>
+            <div className='section_footer'>
+                <div className="section_footer_tv">
+                    <Link to="/tv">
+                        <Button className="small">View TV</Button>
+                    </Link>
+                </div>
+                <div className="section_footer_movie">
+                    <Link to="/movie">
+                        <Button className="small">View Movies</Button>
+                    </Link>
+                </div>
+            </div>
+        </>
     );
 }
 
-MovieList.propTypes = {
-    category: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-}
+
 
 export default MovieList;

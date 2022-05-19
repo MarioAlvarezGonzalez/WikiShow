@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import { useParams } from 'react-router';
+import './video-list.scss';
 
 import tmdbApi from '../../api/tmdbApi';
 
@@ -44,7 +45,7 @@ const Video = props => {
     return (
         <div className="video">
             <div className="video__title">
-                <h2 className='name-card'>{item.title || item.name}</h2>
+                <h2 className='name-trailer'>{item.title || item.name}</h2>
             </div>
             <iframe
                 src={`https://www.youtube.com/embed/${item.key}`}
