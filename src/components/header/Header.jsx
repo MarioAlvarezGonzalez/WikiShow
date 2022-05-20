@@ -59,7 +59,7 @@ const Header = () => {
                     <img src={logo} alt="" />
                     <Link to="/">WiKiSHOW</Link>
                 </div>
-                
+            </div>  
                 <ul className="header__nav">
                     {
                         header.map((index) => (
@@ -71,7 +71,6 @@ const Header = () => {
                         ))
                     }
                 </ul>
-            </div>
         </div>
     );
 }

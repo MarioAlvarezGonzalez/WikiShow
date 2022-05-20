@@ -1,14 +1,14 @@
 @use "../../scss/" as *;
 
 .logo {
-    font-family:'Source Sans Pro';
+    font-family: "Source Sans Pro";
     font-size: 29px;
     font-weight: 800;
 
     display: flex; //Muy imporante utlizar el flex, si no colorara al igual que el texto, es decir la imagen se podria distorsionar
     align-items: center; //Para que quede al mismo nivel que el texto
-    text-align: unset;
-
+    justify-content: flex-start;
+    
     img {
         margin-right: 10px;
         width: 50px;
@@ -21,7 +21,7 @@
 }
 
 .header {
-    font-family:'Source Sans Pro';
+    font-family: "Source Sans Pro";
     height: 128px;
     //opacity: 0.9; Me arrepenti
     position: fixed; //Asi se consigue que el texto no se mueva y se quede encima de la imagen
@@ -30,16 +30,16 @@
     transition: height 0.4s ease, background-color 0.3s ease;
 
     &.shrink {
-        height: 5rem;
+        height: 6.3rem;
         background-color: #0f0f0f;
     }
 
     &__wrap {
         display: flex;
         align-items: center;
-        justify-content: space-between; //Provocamos que la separacion sea entre ambos componentes
-        height: 100%;
-        padding: 0 2rem; //Separacion entre el titulo y las categorias muy importante, cuanto menos valor mas separacion
+        justify-content: center; //Provocamos que la separacion sea entre ambos componentes
+        height: 60%;
+        
 
         @media only screen and (max-width: 768px) {
             //Con esto conseguimos que la version movil, la cabecera se quede centrada
@@ -49,11 +49,10 @@
 
     &__nav {
         display: flex;
-        align-items: center;
-        justify-content: unset;
+        justify-content: center;
 
         & > * ~ * {
-            margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si
+            margin-left: 2rem; //Muy importante con esta propiedad sepramos cada categoria entre si
         }
 
         li {
@@ -84,7 +83,7 @@
 
         //Tras una serie de problemas, he decidido hacer el header abajo como en las versiones de movil
         @media only screen and (max-width: 768px) {
-            font-family:'Source Sans Pro';
+            font-family: "Source Sans Pro";
             position: fixed;
             bottom: 0;
             width: 80%;
