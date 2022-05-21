@@ -8,7 +8,7 @@
     display: flex; //Muy imporante utlizar el flex, si no colorara al igual que el texto, es decir la imagen se podria distorsionar
     align-items: center; //Para que quede al mismo nivel que el texto
     justify-content: flex-start;
-    
+
     img {
         margin-right: 10px;
         width: 50px;
@@ -39,7 +39,6 @@
         align-items: center;
         justify-content: center; //Provocamos que la separacion sea entre ambos componentes
         height: 60%;
-        
 
         @media only screen and (max-width: 768px) {
             //Con esto conseguimos que la version movil, la cabecera se quede centrada
@@ -85,7 +84,6 @@
         @media only screen and (max-width: 768px) {
             font-family: "Source Sans Pro";
             position: fixed;
-            bottom: 0;
             width: 80%;
             padding: 0 2rem;
             bottom: 0;

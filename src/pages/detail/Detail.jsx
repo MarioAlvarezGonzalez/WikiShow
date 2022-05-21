@@ -8,7 +8,7 @@ import './detail.scss';
 import CastList from './CastList';
 import VideoList from '../../components/video-list/VideoList';
 
-import MovieList from '../../components/movie-list/MovieList';
+import MovieButton from '../../components/movie-button/MovieButton';
 
 const Detail = () => {
 
@@ -62,7 +62,7 @@ const Detail = () => {
                             <div className="section mb-3">
                                 <div className="section__header mb-2">
                                 </div>
-                                <MovieList category={category} type="similar" id={item.id}/>
+                                <MovieButton category={category} type="similar" id={item.id}/>
                             </div>
                             
                         </div>

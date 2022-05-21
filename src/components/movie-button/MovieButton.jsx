@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-
-import './movie-list.scss';
-
+import { Link } from 'react-router-dom';
+import Button from '../button/Boton';
 import { SwiperSlide, Swiper } from 'swiper/react';
-
-import tmdbApi, { category } from '../../api/tmdbApi';
-
 import MovieCard from '../movie-card/MovieCard';
 
-const MovieList = props => {
 
+import './movie-button.scss';
+
+
+import tmdbApi from '../../api/tmdbApi';
+
+
+const SectionFooter = props => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,23 +19,14 @@ const MovieList = props => {
             let response = null;
             const params = {};
 
-            if (props.type !== 'similar') {
-                switch (props.category) {
-                    case category.movie:
-                        response = await tmdbApi.getMoviesList(props.type, { params });
-                        break;
-                    default:
-                        response = await tmdbApi.getTvList(props.type, { params });
+            if (props.type == 'similar') {
 
-                }
-            } else {
                 response = await tmdbApi.similar(props.category, props.id);
             }
             setItems(response.results);
         }
         getList();
     }, []);
-
     return (
         <>
             <div className="movie-list">
@@ -51,10 +44,21 @@ const MovieList = props => {
                     }
                 </Swiper>
             </div>
+            <div className='section_footer'>
+                <div className="section_footer_tv">
+                    <Link to="/tv">
+                        <Button className="small">View TV</Button>
+                    </Link>
+                </div>
+                <div className="section_footer_movie">
+                    <Link to="/movie">
+                        <Button className="small">View Movies</Button>
+                    </Link>
+                </div>
+            </div>
         </>
-    );
+    )
+
 }
 
-
-
-export default MovieList;
+export default SectionFooter;
