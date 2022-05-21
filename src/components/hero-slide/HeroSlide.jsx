@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import Button from '../button/Boton';
+import Button from '../button/Button';
 import Modal, { ModalContent } from '../modal/Modal';
 
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';

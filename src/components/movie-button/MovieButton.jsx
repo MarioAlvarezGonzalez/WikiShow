@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../button/Boton';
+import Button from '../button/Button';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import MovieCard from '../movie-card/MovieCard';
 

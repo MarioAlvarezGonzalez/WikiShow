@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router';
 import './movie-grid.scss';
 
 import MovieCard from '../movie-card/MovieCard';
-import Button from '../button/Boton';
+import Button from '../button/Button';
 import Input from '../input/Input'
 
 import tmdbApi, { category, movieType, tvType, personType } from '../../api/tmdbApi';
