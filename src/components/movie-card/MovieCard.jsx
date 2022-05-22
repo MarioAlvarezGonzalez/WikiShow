@@ -24,12 +24,16 @@ const MovieCard = props => {
         <Link to={link}>
            
             <div className="movie-card" style={{backgroundImage: `url(${bg_show})`}}>
-            <div className="person-card" style={{backgroundImage: `url(${bg_person})`}}>            
+            <div className="person-card" style={{backgroundImage: `url(${bg_person})`}}>
+            <h1 className="vote-average">{item.vote_average}</h1>
+
+        
                 <Button>
                     <i className="bx bx-play"></i>
                 </Button>
             </div>
             </div>
+
             <h2 className='name-card'>{item.title || item.name}</h2> 
         </Link>
     );

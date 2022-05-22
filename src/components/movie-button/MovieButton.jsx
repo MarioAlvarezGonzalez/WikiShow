@@ -19,7 +19,7 @@ const SectionFooter = props => {
             let response = null;
             const params = {};
 
-            if (props.type == 'similar') {
+            if (props.type === 'similar') {
 
                 response = await tmdbApi.similar(props.category, props.id);
             }
@@ -45,14 +45,14 @@ const SectionFooter = props => {
                 </Swiper>
             </div>
             <div className='section_footer'>
-                <div className="section_footer_tv">
-                    <Link to="/tv">
-                        <Button className="small">View TV</Button>
+                <div className="section_footer_movie">
+                    <Link to="/movies">
+                        <Button className="small">Go to Movies</Button>
                     </Link>
                 </div>
-                <div className="section_footer_movie">
-                    <Link to="/movie">
-                        <Button className="small">View Movies</Button>
+                <div className="section_footer_tv">
+                    <Link to="/tv">
+                        <Button className="small">Go to Tv</Button>
                     </Link>
                 </div>
             </div>

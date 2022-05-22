@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
+
 //Importamos el CSS del header
 import './header.scss';
 //Declaramos que queremos el logo a un ruta de la carpeta
