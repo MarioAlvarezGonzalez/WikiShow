@@ -17,7 +17,6 @@ const SectionFooter = props => {
     useEffect(() => {
         const getList = async () => {
             let response = null;
-            const params = {};
 
             if (props.type === 'similar') {
 
@@ -46,7 +45,7 @@ const SectionFooter = props => {
             </div>
             <div className='section_footer'>
                 <div className="section_footer_movie">
-                    <Link to="/movies">
+                    <Link to="/movie">
                         <Button className="small">Go to Movies</Button>
                     </Link>
                 </div>

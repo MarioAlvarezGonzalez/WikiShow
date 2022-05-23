@@ -38,7 +38,13 @@ button {
 
 .btn.small {
     border-width: 2px;
-    padding: 4px 24px;
+    padding: 4px 17px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.btn.small:hover {
+    border-width: 2px;
+    padding: 4px 17px;
     font-size: 1rem;
     font-weight: 800;
 }

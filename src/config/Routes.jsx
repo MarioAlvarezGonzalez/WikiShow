@@ -6,30 +6,22 @@ import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import DetailMovie from '../pages/detail/DetailMovie';
 
-
-
 const Routes = () => {
     return (
-        <Switch>
-            <Route
-                path='/:category/search/:keyword'
-                component={Catalog}
-            />
-            <Route
-                path='/:category/:id'
-                component={DetailMovie}
-            />
-              
-            <Route
-                path='/:category'
-                component={Catalog}
-            />
-            <Route
-                path='/'
-                exact
-                component={Home}
-            />
-        </Switch>
+            <Switch>
+                <Route path='/:category/search/:keyword'>
+                    <Catalog />
+                </Route>
+                <Route path='/:category/:id'>
+                    <DetailMovie />
+                </Route>
+                <Route path='/:category'>
+                    <Catalog />
+                </Route>
+                <Route exact path='/'>
+                    <Home />
+                </Route>
+            </Switch>
     );
 }
 

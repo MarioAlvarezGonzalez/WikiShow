@@ -11,7 +11,7 @@ import apiConfig from '../../api/apiConfig';
 
 const MovieCard = props => {
 
-    const item  = props.item; //Cargamos todos las propiedas del item en la variable "item"
+    const item = props.item; //Cargamos todos las propiedas del item en la variable "item"
 
     const link = '/' + category[props.category] + '/' + item.id; //Creamos el link para la categoria y el id del objeto movie/33232
 
@@ -20,21 +20,22 @@ const MovieCard = props => {
 
     return (
         /* Creamos el link, en las lineas posteriores creamos divs con cada background, le añadimos el boton de play de boxicons
-        y crearemos un h2 con el titulo del show o el nombre de la persona */
+        y crearemos un h2 con el titulo del movie o el nombre de la persona */
         <Link to={link}>
-           
-            <div className="movie-card" style={{backgroundImage: `url(${bg_show})`}}>
-            <div className="person-card" style={{backgroundImage: `url(${bg_person})`}}>
-            <h1 className="vote-average">{item.vote_average}</h1>
 
-        
-                <Button>
-                    <i className="bx bx-play"></i>
-                </Button>
-            </div>
+            <div className="movie-card" style={{ backgroundImage: `url(${bg_show})` }}>
+                <div className="person-card" style={{ backgroundImage: `url(${bg_person})` }}>
+                    <h1 className="vote-average">{item.vote_average}</h1>
+
+
+                    <Button>
+                        <i className="bx bx-search"></i><p className='movie-over'>{item.overview}</p>
+                    </Button>
+                    
+                </div>
             </div>
 
-            <h2 className='name-card'>{item.title || item.name}</h2> 
+            <h2 className='name-card'>{item.title || item.name}</h2>
         </Link>
     );
 }

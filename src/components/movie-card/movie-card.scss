@@ -3,16 +3,27 @@
 .movie-card {
     position: relative;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: bottom; //Para que quede centrado la imagen de fondo
     border-radius: 30px/20px;
 
+    .bx-search {
+        font-size: 40px;
+    }
+
     .btn {
+        width: fit-content;
         position: absolute; //Muy imporante si cambiamos esto no se quedara absoluta y podra cambiar por otro componentes
-        top: 50%; //Importante tenia puesto px, pero si queremos que sera responsivo necesitamos porcentajes
-        left: 50%; //Importante tenia puesto px, pero si queremos que sera responsivo necesitamos porcentajes
+        font-size: 15px;
         //Una transofacion de aparecer el boton si estas encima y desaparece si te sales
-        transform: translate(-50%) scale(0);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out, box-shadow 0.3s ease;
+    }
+    .movie-over {
+        text-align: left;
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
     }
 
     &::before {
@@ -35,6 +46,10 @@
     background-position: bottom;
     padding-top: 200%;
     border-radius: 30px/20px;
+
+    .bx-search {
+        font-size: 40px;
+    }
 
     .btn {
         position: absolute;
@@ -79,6 +94,6 @@
     justify-content: center;
     padding-right: 15px;
     padding-left: 15px;
-    
+
     color: red;
 }

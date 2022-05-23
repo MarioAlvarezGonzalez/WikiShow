@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
-
+import Button from '../button/Button';
 
 //Importamos el CSS del header
 import './header.scss';
@@ -28,12 +28,11 @@ const header = [
         display: 'Actors',
         path: '/person'
     },
-    
 ];
 
 const Header = () => {
 
-    const headerRef = useRef(null); 
+    const headerRef = useRef(null);
     //Con esto pillamos la referencia al Header para posteriormente llamarlo a modificar
 
     //El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. 
@@ -60,19 +59,22 @@ const Header = () => {
                     <img src={logo} alt="" />
                     <Link to="/">WiKiSHOW</Link>
                 </div>
-            </div>  
-                <ul className="header__nav">
-                    {
-                        header.map((index) => (
-                            <li key={index}>
-                                <Link to={index.path}>
+            </div>
+            <ul className="header__nav">
+                {
+                    header.map((index) => (
+                        <li key={index}>
+                            <Button className="small">
+                                <Link className='small_header' to={index.path}>
+                                <i className="bx bx-home"></i>
                                     {index.display}
                                 </Link>
-                            </li>
-                        ))
-                    }
-                </ul>
-        </div>
+                            </Button>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div >
     );
 }
 

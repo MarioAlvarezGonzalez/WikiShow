@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-
-import tmdbApi, { movieType } from '../../api/tmdbApi';
+import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
 import './detail.scss';
@@ -35,6 +34,7 @@ const DetailMovie = () => {
                             <div className="movie-content__poster">
                                 <div className="movie-content__poster__img" style={{ backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path || item.profile_path)})` }}></div>
                             </div>
+                            
                             <div className="movie-content__info">
                                 <h1 className="title">
                                     {item.title || item.name}
