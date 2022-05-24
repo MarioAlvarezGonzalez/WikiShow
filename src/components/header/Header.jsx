@@ -11,24 +11,31 @@ import './header.scss';
 import logo from '../../assets/Logo.JPG';
 
 //Aqui hablamos de las diferentes categorais que se mostraran en el Header
-const header = [
+const header_home = [
     {
         display: 'Home',
         path: '/'
     },
+]
+const header_movie = [
     {
         display: 'Movies',
         path: '/movie'
-    },
+    }
+]
+const header_tv = [
     {
-        display: 'TV-Show',
+        display: 'TV',
         path: '/tv'
-    },
+    }
+]
+const header_person = [
     {
         display: 'Actors',
         path: '/person'
-    },
-];
+    }
+]
+
 
 const Header = () => {
 
@@ -62,16 +69,54 @@ const Header = () => {
             </div>
             <ul className="header__nav">
                 {
-                    header.map((index) => (
-                        <li key={index}>
+                    header_home.map((index_home) => (
+                        <li key={index_home}>
                             <Button className="small">
-                                <Link className='small_header' to={index.path}>
-                                <i className="bx bx-home"></i>
-                                    {index.display}
+                                <Link className='small_header' to={index_home.path}>
+                                    <i className="bx bx-home"></i>
+                                    {index_home.display}
                                 </Link>
                             </Button>
                         </li>
                     ))
+                }
+                {
+                    header_movie.map((index_movie) => (
+                        <li key={index_movie}>
+                            <Button className="small">
+                                <Link className='small_header' to={index_movie.path}>
+                                    <i className="bx bx-movie"></i>
+                                    {index_movie.display}
+                                </Link>
+                            </Button>
+                        </li>
+                    ))
+                }
+                {
+                    header_tv.map((index_tv) => (
+                        <li key={index_tv}>
+                            <Button className="small">
+                                <Link className='small_header' to={index_tv.path}>
+                                    <i className="bx bx-tv"></i>
+                                    {index_tv.display}
+                                </Link>
+                            </Button>
+                        </li>
+                    )
+                    )
+                }
+                {
+                    header_person.map((index_person) => (
+                        <li key={index_person}>
+                            <Button className="small">
+                                <Link className='small_header' to={index_person.path}>
+                                    <i className="bx bx-user"></i>
+                                    {index_person.display}
+                                </Link>
+                            </Button>
+                        </li>
+                    )
+                    )
                 }
             </ul>
         </div >
