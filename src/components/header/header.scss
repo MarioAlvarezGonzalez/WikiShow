@@ -29,6 +29,13 @@
     z-index: 2; //Muy importante, si es muy bajo el Home se come el Header
     transition: height 0.6s ease, background-color 0.6s ease;
 
+    @media only screen and (max-width: 768px) {
+        //Con esto conseguimos que la version movil, la cabecera se quede centrada
+        justify-content: center;
+        height: 105px;
+
+    }
+
     &.shrink {
         height: 9rem;
         background-color: #0f0f0f;
@@ -40,11 +47,6 @@
         justify-content: center; //Provocamos que la separacion sea entre ambos componentes
         height: 60%;
 
-        @media only screen and (max-width: 768px) {
-            //Con esto conseguimos que la version movil, la cabecera se quede centrada
-            justify-content: center;
-            height: 100%;
-        }
     }
 
     &__nav {

@@ -1,11 +1,11 @@
 @use "../../scss/" as *;
 
 .hero-slide {
-    margin-bottom: 3rem; //Separamos el hero slide, del resto de componentes
+    margin-bottom: 6rem; //Separamos el hero slide, del resto de componentes
 }
 
 .hero-slide__item {
-    padding: 14rem 0; //Hacemos que el hero slide sea bastante grande para separar la pagina como en sectores
+    padding: 13.2rem 0; //Hacemos que el hero slide sea bastante grande para separar la pagina como en sectores
     width: 100%; //Establecemos el tamaño 100% es lo normal
     background-position: center; //Lo posicionamos en el centro
     background-size: cover; //Con cover hacemos que ocupa siempre el ancho del fondo

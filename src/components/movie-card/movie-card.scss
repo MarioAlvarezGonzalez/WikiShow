@@ -13,6 +13,7 @@
 
     .btn {
         width: fit-content;
+        max-height: fit-content;
         position: absolute; //Muy imporante si cambiamos esto no se quedara absoluta y podra cambiar por otro componentes
         font-size: 15px;
         //Una transofacion de aparecer el boton si estas encima y desaparece si te sales
@@ -20,7 +21,6 @@
         transition: transform 0.5s ease-in-out, box-shadow 0.3s ease;
     }
     .movie-over {
-        text-align: left;
         @media only screen and (max-width: 768px) {
             display: none;
         }
@@ -83,6 +83,9 @@
 .name-card {
     font-size: 25px;
     text-align: center;
+    @media only screen and (max-width: 768px) {
+        font-size: 13px;
+    }
 }
 .vote-average {
     border-radius: 30px/20px;
@@ -94,6 +97,5 @@
     justify-content: center;
     padding-right: 15px;
     padding-left: 15px;
-
     color: red;
 }

@@ -28,7 +28,7 @@ const HeroSlide = () => {
             const params = {page: 1}
             try {
                 const response = await tmdbApi.getMoviesList(movieType.popular, {params});
-                setMovieItems(response.results.slice(0, 8));
+                setMovieItems(response.results.slice(0, 7));
                 console.log(response); //Verifico que obtiene respuesta, en caso negativo salta al catch para ver el error
             } catch {
                 console.log('error');
@@ -108,7 +108,7 @@ const HeroSlideItem = props => {
         //Decimos que si tiene algun trailer,cojeremos la url del video, y cogeremos el primer resultado,
         //Normalmente el resultado 0, suele ser el trailer pero no es 100% seguro y eso lo volcamos al iframe
         if (trailer.results.length > 0) {
-            const video = 'https://www.youtube.com/embed/' + trailer.results[0].key;
+            const video = 'https://www.youtube.com/embed/' + trailer.results[1].key;
             modal.querySelector('.modal__content > iframe').setAttribute('src', video);
         }
 
@@ -132,7 +132,7 @@ const HeroSlideItem = props => {
                             Watch now
                         </Button>
                         <Button onClick={setModalSelected}>
-                            Watch trailer
+                            Watch video
                         </Button>
                     </div>
                 </div>

@@ -13,40 +13,38 @@ const Home = () => {
             <HeroSlide/>
             <div className="container">
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div className="section__header mb-3">
                         <h2>Trending Movies</h2>
                         <Link to="/movie">
-                            <Button className="small">View more</Button>
+                            <Button className="small">View All Movies</Button>
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.popular}/>
                 </div>
 
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div className="section__header mb-3">
                         <h2>Top Rated Movies</h2>
                         <Link to="/movie">
-                            <Button className="small">View more</Button>
+                            <Button className="small">View All Movies</Button>
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.top_rated}/>
                 </div>
-
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div className="section__header mb-3">
                         <h2>Trending TV</h2>
                         <Link to="/tv">
-                            <Button className="small">View more</Button>
+                            <Button className="small">View All TV-Show</Button>
                         </Link>
                     </div>
                     <MovieList category={category.tv} type={tvType.popular}/>
                 </div>
-
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div className="section__header mb-3">
                         <h2>Top Rated TV</h2>
                         <Link to="/tv">
-                            <Button className="small">View more</Button>
+                            <Button className="small">View All TV-Show</Button>
                         </Link>
                     </div>
                     <MovieList category={category.tv} type={tvType.top_rated}/>
