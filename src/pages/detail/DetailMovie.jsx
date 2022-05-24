@@ -46,7 +46,7 @@ const DetailMovie = () => {
                                 <div className="genres">
                                     {
 
-                                        item.genres && item.genres.slice(0, 5).map((genre, i) => (
+                                        item.genres && item.genres.slice(0, 6).map((genre, i) => (
                                             <span key={i} className="genres__item">{genre.name}</span>
                                         ))
 

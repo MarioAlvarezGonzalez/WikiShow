@@ -12,7 +12,7 @@ const Home = () => {
         <>
             <HeroSlide/>
             <div className="container">
-                <div className="section mb-3">
+                <div className="mb-3">
                     <div className="section__header mb-3">
                         <h2>Trending Movies</h2>
                         <Link to="/movie">
@@ -22,7 +22,7 @@ const Home = () => {
                     <MovieList category={category.movie} type={movieType.popular}/>
                 </div>
 
-                <div className="section mb-3">
+                <div className="mb-3">
                     <div className="section__header mb-3">
                         <h2>Top Rated Movies</h2>
                         <Link to="/movie">
@@ -31,7 +31,7 @@ const Home = () => {
                     </div>
                     <MovieList category={category.movie} type={movieType.top_rated}/>
                 </div>
-                <div className="section mb-3">
+                <div className="mb-3">
                     <div className="section__header mb-3">
                         <h2>Trending TV</h2>
                         <Link to="/tv">
@@ -40,7 +40,7 @@ const Home = () => {
                     </div>
                     <MovieList category={category.tv} type={tvType.popular}/>
                 </div>
-                <div className="section mb-3">
+                <div className="mb-3">
                     <div className="section__header mb-3">
                         <h2>Top Rated TV</h2>
                         <Link to="/tv">

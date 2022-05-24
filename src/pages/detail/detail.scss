@@ -40,10 +40,9 @@
     &__poster {
         flex: 1;
 
-        @include mobile {
+        @media only screen and (max-width: 768px) {
             display: none;
         }
-
         &__img {
             background-position: center;
             background-size: cover;
