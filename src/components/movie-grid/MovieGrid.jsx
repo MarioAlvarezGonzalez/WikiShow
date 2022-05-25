@@ -7,7 +7,7 @@ import MovieCard from '../movie-card/MovieCard';
 import Button from '../button/Button';
 import Input from '../input/Input'
 
-import ConfigApi, { category, movieType, tvType, personType } from '../../api/ConfigApi';
+import ConfigApi, { category, movie, tv, person } from '../../api/ConfigApi';
 
 const MovieGrid = props => {
 
@@ -25,14 +25,14 @@ const MovieGrid = props => {
                 const params = {};
                 switch (props.category) {
                     case category.movie:
-                        response = await ConfigApi.getMoviesList(movieType.upcoming, { params });
+                        response = await ConfigApi.getMoviesList(movie.upcoming, { params });
                         break;
                     case category.tv:
-                        response = await ConfigApi.getTvList(tvType.popular, { params });
+                        response = await ConfigApi.getTvList(tv.popular, { params });
                         break;
                     default:
                     case category.person:
-                        response = await ConfigApi.getPersonList(personType.popular, { params });
+                        response = await ConfigApi.getPersonList(person.popular, { params });
 
 
                 }
@@ -56,14 +56,14 @@ const MovieGrid = props => {
             };
             switch (props.category) {
                 case category.movie:
-                    response = await ConfigApi.getMoviesList(movieType.upcoming, { params });
+                    response = await ConfigApi.getMoviesList(movie.upcoming, { params });
                     break;
                 case category.tv:
-                    response = await ConfigApi.getTvList(tvType.popular, { params });
+                    response = await ConfigApi.getTvList(tv.popular, { params });
                     break;
                 default:
                 case category.person:
-                    response = await ConfigApi.getPersonList(personType.popular, { params });
+                    response = await ConfigApi.getPersonList(person.popular, { params });
 
             }
         } else {

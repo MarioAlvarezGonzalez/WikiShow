@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Button from '../button/Button';
 import Modal, { ModalContent } from '../modal/Modal';
 
-import tmdbApi, { category, movieType } from '../../api/ConfigApi';
+import tmdbApi, { category, movie } from '../../api/ConfigApi';
 import ImagesApi from '../../api/ImagesApi';
 
 import './hero-slide.scss';
@@ -27,7 +27,7 @@ const HeroSlide = () => {
         const getMovies = async () => {
             const params = {page: 1}
             try {
-                const response = await tmdbApi.getMoviesList(movieType.popular, {params});
+                const response = await tmdbApi.getMoviesList(movie.popular, {params});
                 setMovieItems(response.results.slice(0, 7));
                 console.log(response); //Verifico que obtiene respuesta, en caso negativo salta al catch para ver el error
             } catch {

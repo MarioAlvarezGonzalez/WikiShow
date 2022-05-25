@@ -5,7 +5,7 @@ import Button from '../components/button/Button';
 import HeroSlide from '../components/hero-slide/HeroSlide';
 import MovieList from '../components/movie-list/MovieList';
 
-import { category, movieType, tvType } from '../api/ConfigApi';
+import { category, movie, tv } from '../api/ConfigApi';
 
 const Home = () => {
     return (
@@ -19,7 +19,7 @@ const Home = () => {
                             <Button className="small">View All Movies</Button>
                         </Link>
                     </div>
-                    <MovieList category={category.movie} type={movieType.popular}/>
+                    <MovieList category={category.movie} type={movie.popular}/>
                 </div>
 
                 <div className="mb-3">
@@ -29,7 +29,7 @@ const Home = () => {
                             <Button className="small">View All Movies</Button>
                         </Link>
                     </div>
-                    <MovieList category={category.movie} type={movieType.top_rated}/>
+                    <MovieList category={category.movie} type={movie.top_rated}/>
                 </div>
                 <div className="mb-3">
                     <div className="section__header mb-3">
@@ -38,7 +38,7 @@ const Home = () => {
                             <Button className="small">View All TV-Show</Button>
                         </Link>
                     </div>
-                    <MovieList category={category.tv} type={tvType.popular}/>
+                    <MovieList category={category.tv} type={tv.popular}/>
                 </div>
                 <div className="mb-3">
                     <div className="section__header mb-3">
@@ -47,7 +47,7 @@ const Home = () => {
                             <Button className="small">View All TV-Show</Button>
                         </Link>
                     </div>
-                    <MovieList category={category.tv} type={tvType.top_rated}/>
+                    <MovieList category={category.tv} type={tv.top_rated}/>
                 </div>
             </div>
         </>
