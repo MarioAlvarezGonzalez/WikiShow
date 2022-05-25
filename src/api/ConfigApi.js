@@ -1,4 +1,4 @@
-import axiosClient from "./axiosClient";
+import AxiosUser from "./AxiosUser";
 
 export const category = {
     movie: 'movie',
@@ -23,44 +23,44 @@ export const personType = {
     movie_credits: 'movie_credits'
 }
 
-const tmdbApi = {
+const ConfigApi = {
     getMoviesList: (type, params) => {
         const url = 'movie/' + movieType[type];
-        return axiosClient.get(url, params);
+        return AxiosUser.get(url, params);
     },
     getTvList: (type, params) => {
         const url = 'tv/' + tvType[type];
-        return axiosClient.get(url, params);
+        return AxiosUser.get(url, params);
     },
     getPersonList: (type, params) => {
         const url = 'person/' + personType[type];
-        return axiosClient.get(url, params);
+        return AxiosUser.get(url, params);
     },
     getVideos: (cate, id) => {
         const url = category[cate] + '/' + id + '/videos';
-        return axiosClient.get(url, {params: {}});
+        return AxiosUser.get(url, {params: {}});
     },
     
     search: (cate, params) => {
         const url = 'search/' + category[cate];
-        return axiosClient.get(url, params);
+        return AxiosUser.get(url, params);
     },
     detail: (cate, id, params) => {
         const url = category[cate] + '/' + id;
-        return axiosClient.get(url, params);
+        return AxiosUser.get(url, params);
     },
     
 
     credits: (cate, id) => {
         const url = category[cate] + '/' + id + '/credits';
-        return axiosClient.get(url, {params: {}});
+        return AxiosUser.get(url, {params: {}});
     },
     
     similar: (cate, id) => {
         const url = category[cate] + '/' + id + '/similar';
-        return axiosClient.get(url, {params: {}});
+        return AxiosUser.get(url, {params: {}});
     }
    
 }
 
-export default tmdbApi;
+export default ConfigApi;

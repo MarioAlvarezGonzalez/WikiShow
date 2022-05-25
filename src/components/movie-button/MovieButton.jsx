@@ -8,7 +8,7 @@ import MovieCard from '../movie-card/MovieCard';
 import './movie-button.scss';
 
 
-import tmdbApi from '../../api/tmdbApi';
+import tmdbApi from '../../api/ConfigApi';
 
 
 const SectionFooter = props => {

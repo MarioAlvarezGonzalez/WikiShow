@@ -7,7 +7,7 @@ import MovieCard from '../movie-card/MovieCard';
 import Button from '../button/Button';
 import Input from '../input/Input'
 
-import tmdbApi, { category, movieType, tvType, personType } from '../../api/tmdbApi';
+import ConfigApi, { category, movieType, tvType, personType } from '../../api/ConfigApi';
 
 const MovieGrid = props => {
 
@@ -25,14 +25,14 @@ const MovieGrid = props => {
                 const params = {};
                 switch (props.category) {
                     case category.movie:
-                        response = await tmdbApi.getMoviesList(movieType.upcoming, { params });
+                        response = await ConfigApi.getMoviesList(movieType.upcoming, { params });
                         break;
                     case category.tv:
-                        response = await tmdbApi.getTvList(tvType.popular, { params });
+                        response = await ConfigApi.getTvList(tvType.popular, { params });
                         break;
                     default:
                     case category.person:
-                        response = await tmdbApi.getPersonList(personType.popular, { params });
+                        response = await ConfigApi.getPersonList(personType.popular, { params });
 
 
                 }
@@ -40,7 +40,7 @@ const MovieGrid = props => {
                 const params = {
                     query: keyword
                 }
-                response = await tmdbApi.search(props.category, { params });
+                response = await ConfigApi.search(props.category, { params });
             }
             setItems(response.results);
             setTotalPage(response.total_pages);
@@ -56,14 +56,14 @@ const MovieGrid = props => {
             };
             switch (props.category) {
                 case category.movie:
-                    response = await tmdbApi.getMoviesList(movieType.upcoming, { params });
+                    response = await ConfigApi.getMoviesList(movieType.upcoming, { params });
                     break;
                 case category.tv:
-                    response = await tmdbApi.getTvList(tvType.popular, { params });
+                    response = await ConfigApi.getTvList(tvType.popular, { params });
                     break;
                 default:
                 case category.person:
-                    response = await tmdbApi.getPersonList(personType.popular, { params });
+                    response = await ConfigApi.getPersonList(personType.popular, { params });
 
             }
         } else {
@@ -71,7 +71,7 @@ const MovieGrid = props => {
                 page: page + 1,
                 query: keyword
             }
-            response = await tmdbApi.search(props.category, { params });
+            response = await ConfigApi.search(props.category, { params });
         }
         setItems([...items, ...response.results]);
         setPage(page + 1);

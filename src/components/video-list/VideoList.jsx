@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
 import './video-list.scss';
 
-import tmdbApi from '../../api/tmdbApi';
+import tmdbApi from '../../api/ConfigApi';
 
 const VideoList = props => {
 
