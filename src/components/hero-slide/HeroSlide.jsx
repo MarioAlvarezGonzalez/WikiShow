@@ -9,7 +9,7 @@ import Button from '../button/Button';
 import Modal, { ModalContent } from '../modal/Modal';
 
 import tmdbApi, { category, movieType } from '../../api/ConfigApi';
-import AccessApi from '../../api/AccessApi';
+import ImagesApi from '../../api/ImagesApi';
 
 import './hero-slide.scss';
 import { useHistory } from 'react-router';
@@ -97,7 +97,7 @@ const HeroSlideItem = props => {
     //Si no encuentra el backdrop, cogera el poster es decir siempre tendra un fondo 
     const film = props.film;
 
-    const background = AccessApi.originalImage(film.backdrop_path ? film.backdrop_path : film.poster_path);
+    const background = ImagesApi.originalImage(film.backdrop_path ? film.backdrop_path : film.poster_path);
 
     //El componente modal proporciona una base sólida para crear cuadros de diálogo, popovers, lightboxes o cualquier otra cosa.
     const setModalSelected = async () => {
@@ -137,7 +137,7 @@ const HeroSlideItem = props => {
                     </div>
                 </div>
                 <div className="hero-slide__item__content__poster">
-                    <img src={AccessApi.originalImage(film.poster_path)} alt="" />
+                    <img src={ImagesApi.originalImage(film.poster_path)} alt="" />
                 </div>
             </div>
         </div>
