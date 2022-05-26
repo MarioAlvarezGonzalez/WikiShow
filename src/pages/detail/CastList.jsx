@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router';
 
-import tmdbApi from '../../api/ConfigApi';
-import AccessApi from '../../api/AccessApi';
+import ConfigApi from '../../api/ConfigApi';
+import ImagesApi from '../../api/ImagesApi';
 
 const CastList = props => {
 
@@ -14,7 +14,7 @@ const CastList = props => {
 
     useEffect(() => {
         const getCredits = async () => {
-            const res = await tmdbApi.credits(category, props.id);
+            const res = await ConfigApi.credits(category, props.id);
             setCasts(res.cast.slice(0, 8));
         }
         getCredits();
@@ -24,7 +24,7 @@ const CastList = props => {
             {
                 casts.map((item, imagen) => (
                     <div key={imagen} className="casts__item">
-                        <div className="casts__item__img" style={{backgroundImage: `url(${AccessApi.w500Image(item.profile_path || item.poster_path || item.backdrop_path )})`}}></div>
+                        <div className="casts__item__img" style={{backgroundImage: `url(${ImagesApi.w500Image(item.profile_path || item.poster_path || item.backdrop_path )})`}}></div>
                         <p className="casts__item__name">{item.title || item.name}</p>
                     </div>
                 ))

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import tmdbApi from '../../api/ConfigApi';
-import AccessApi from '../../api/AccessApi';
+import ConfigApi from '../../api/ConfigApi';
+import ImagesApi from '../../api/ImagesApi';
 
 import './detail.scss';
 import CastList from './CastList';
@@ -17,7 +17,7 @@ const DetailMovie = () => {
 
     useEffect(() => {
         const getDetail = async () => {
-            const response = await tmdbApi.detail(category, id, { params: {} });
+            const response = await ConfigApi.detail(category, id, { params: {} });
             setItem(response);
             window.scrollTo(0, 0);
         }
@@ -29,10 +29,10 @@ const DetailMovie = () => {
             {
                 item && (
                     <>
-                        <div className="banner" style={{ backgroundImage: `url(${AccessApi.originalImage(item.backdrop_path || item.poster_path || item.profile_path)})` }}></div>
+                        <div className="banner" style={{ backgroundImage: `url(${ImagesApi.originalImage(item.backdrop_path || item.poster_path || item.profile_path)})` }}></div>
                         <div className="mb-3 movie-content container">
                             <div className="movie-content__poster">
-                                <div className="movie-content__poster__img" style={{ backgroundImage: `url(${AccessApi.originalImage(item.poster_path || item.backdrop_path || item.profile_path)})` }}></div>
+                                <div className="movie-content__poster__img" style={{ backgroundImage: `url(${ImagesApi.originalImage(item.poster_path || item.backdrop_path || item.profile_path)})` }}></div>
                             </div>
                             
                             <div className="movie-content__info">

@@ -8,7 +8,7 @@ import MovieCard from '../movie-card/MovieCard';
 import './movie-button.scss';
 
 
-import tmdbApi from '../../api/ConfigApi';
+import ConfigApi from '../../api/ConfigApi';
 
 
 const SectionFooter = props => {
@@ -20,7 +20,7 @@ const SectionFooter = props => {
 
             if (props.type === 'similar') {
 
-                response = await tmdbApi.similar(props.category, props.id);
+                response = await ConfigApi.similar(props.category, props.id);
             }
             setItems(response.results);
         }

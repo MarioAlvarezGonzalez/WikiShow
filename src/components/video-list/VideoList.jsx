@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
 import './video-list.scss';
 
-import tmdbApi from '../../api/ConfigApi';
+import ConfigApi from '../../api/ConfigApi';
 
 const VideoList = props => {
 
@@ -13,7 +13,7 @@ const VideoList = props => {
 
     useEffect(() => {
         const getVideos = async () => {
-            const res = await tmdbApi.getVideos(category, props.id);
+            const res = await ConfigApi.getVideos(category, props.id);
             setVideos(res.results.slice(0, 4));
         }
         getVideos();
