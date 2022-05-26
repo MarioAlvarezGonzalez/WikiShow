@@ -6,56 +6,58 @@ export const category = {
     person : 'person'
 }
 
-export const movie = {
+export const movieType = {
     upcoming: 'upcoming',
     popular: 'popular',
     top_rated: 'top_rated'
 }
 
-export const tv = {
+export const tvType = {
     popular: 'popular',
     top_rated: 'top_rated',
     on_the_air: 'on_the_air'
 
 }
-export const person = {
+export const personType = {
     popular: 'popular',
     movie_credits: 'movie_credits'
 }
 
 const ConfigApi = {
-    getMoviesList: (category, params) => {
-        const url = 'movie/' + movie[category];
+    getMoviesList: (type, params) => {
+        const url = 'movie/' + movieType[type];
         return AxiosUser.get(url, params);
     },
-    getTvList: (category, params) => {
-        const url = 'tv/' + tv[category];
+    getTvList: (type, params) => {
+        const url = 'tv/' + tvType[type];
         return AxiosUser.get(url, params);
     },
-    getPersonList: (category, params) => {
-        const url = 'person/' + person[category];
+    getPersonList: (type, params) => {
+        const url = 'person/' + personType[type];
         return AxiosUser.get(url, params);
     },
-    getVideos: (type, id) => {
-        const url = category[type] + '/' + id + '/videos';
+    getVideos: (cate, id) => {
+        const url = category[cate] + '/' + id + '/videos';
         return AxiosUser.get(url, {params: {}});
     },
     
-    search: (type, params) => {
-        const url = 'search/' + category[type];
+    search: (cate, params) => {
+        const url = 'search/' + category[cate];
         return AxiosUser.get(url, params);
     },
-    type: (type, id, params) => {
-        const url = category[type] + '/' + id;
+    detail: (cate, id, params) => {
+        const url = category[cate] + '/' + id;
         return AxiosUser.get(url, params);
     },
-    credits: (type, id) => {
-        const url = category[type] + '/' + id + '/credits';
+    
+
+    credits: (cate, id) => {
+        const url = category[cate] + '/' + id + '/credits';
         return AxiosUser.get(url, {params: {}});
     },
     
-    similar: (type, id) => {
-        const url = category[type] + '/' + id + '/similar';
+    similar: (cate, id) => {
+        const url = category[cate] + '/' + id + '/similar';
         return AxiosUser.get(url, {params: {}});
     }
    
