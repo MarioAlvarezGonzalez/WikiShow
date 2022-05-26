@@ -1,9 +1,9 @@
 const ImagesApi = {
-    originalImage: (imgPath) => (
-    `https://image.tmdb.org/t/p/original/${imgPath}`
+    original: (id) => (
+    `https://image.tmdb.org/t/p/original/${id}`
     ),
-    w500Image: (imgPath) => (
-    `https://image.tmdb.org/t/p/w500/${imgPath}`
+    w500: (id) => (
+    `https://image.tmdb.org/t/p/w500/${id}`
     )
 }
 

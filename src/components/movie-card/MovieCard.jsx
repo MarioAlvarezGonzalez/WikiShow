@@ -15,8 +15,8 @@ const MovieCard = props => {
 
     const link = '/' + category[props.category] + '/' + item.id; //Creamos el link para la categoria y el id del objeto movie/33232
 
-    const bg_show = ImagesApi.w500Image(item.poster_path); //Imagen del recuadro con el poster 
-    const bg_person = ImagesApi.w500Image(item.profile_path); //Imagen de fondo con la imagen de perfil
+    const bg_show = ImagesApi.w500(item.poster_path); //Imagen del recuadro con el poster 
+    const bg_person = ImagesApi.w500(item.profile_path); //Imagen de fondo con la imagen de perfil
 
     return (
         /* Creamos el link, en las lineas posteriores creamos divs con cada background, le añadimos el boton de play de boxicons

@@ -29,10 +29,10 @@ const DetailMovie = () => {
             {
                 item && (
                     <>
-                        <div className="banner" style={{ backgroundImage: `url(${ImagesApi.originalImage(item.backdrop_path || item.poster_path || item.profile_path)})` }}></div>
+                        <div className="banner" style={{ backgroundImage: `url(${ImagesApi.original(item.backdrop_path || item.poster_path || item.profile_path)})` }}></div>
                         <div className="mb-3 movie-content container">
                             <div className="movie-content__poster">
-                                <div className="movie-content__poster__img" style={{ backgroundImage: `url(${ImagesApi.originalImage(item.poster_path || item.backdrop_path || item.profile_path)})` }}></div>
+                                <div className="movie-content__poster__img" style={{ backgroundImage: `url(${ImagesApi.original(item.poster_path || item.backdrop_path || item.profile_path)})` }}></div>
                             </div>
                             
                             <div className="movie-content__info">

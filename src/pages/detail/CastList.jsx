@@ -24,7 +24,7 @@ const CastList = props => {
             {
                 casts.map((item, imagen) => (
                     <div key={imagen} className="casts__item">
-                        <div className="casts__item__img" style={{backgroundImage: `url(${ImagesApi.w500Image(item.profile_path || item.poster_path || item.backdrop_path )})`}}></div>
+                        <div className="casts__item__img" style={{backgroundImage: `url(${ImagesApi.w500(item.profile_path || item.poster_path || item.backdrop_path )})`}}></div>
                         <p className="casts__item__name">{item.title || item.name}</p>
                     </div>
                 ))
