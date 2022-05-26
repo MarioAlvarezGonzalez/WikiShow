@@ -21,9 +21,8 @@
 }
 
 .header {
-    font-family: "Source Sans Pro";
     height: 128px;
-    //opacity: 0.9; Me arrepenti
+    opacity: 0.95; 
     position: fixed; //Asi se consigue que el texto no se mueva y se quede encima de la imagen
     width: 100%; //Necesario si queremos seperar todas las partes del Header
     z-index: 2; //Muy importante, si es muy bajo el Home se come el Header
@@ -33,23 +32,21 @@
         //Con esto conseguimos que la version movil, la cabecera se quede centrada
         justify-content: center;
         height: 105px;
-
     }
 
-    &.shrink {
+    &.vanish {
         height: 9rem;
         background-color: #0f0f0f;
     }
 
-    &__wrap {
+    &_container {
         display: flex;
         align-items: center;
         justify-content: center; //Provocamos que la separacion sea entre ambos componentes
         height: 60%;
-
     }
 
-    &__nav {
+    &_menu {
         display: flex;
         justify-content: center;
         color: white;
@@ -67,18 +64,15 @@
 
         //Tras una serie de problemas, he decidido hacer el header abajo como en las versiones de movil
         @media only screen and (max-width: 768px) {
-            font-family: "Source Sans Pro";
-            position: fixed;
-            width: 80%;
-            padding: 0 2rem;
-            bottom: 0;
-            height: 5rem;
-            width: 100%;
-            background-color: #0f0f0f;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: fixed;  //Muy imporante si quieremos que el menu este abajo
+            padding: 0 2rem;
+            bottom: 0;
+            height: 5rem;
+            width: 100%; //Para que ocupe toda la pantalla
+            background-color: #0f0f0f;
 
             & > * ~ * {
                 margin-left: 1.5rem; //Muy importante con esta propiedad sepramos cada categoria entre si en la version movil

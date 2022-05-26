@@ -1,50 +1,65 @@
 @use "../../scss/" as *;
 
-button {
-    cursor: pointer;
-    font-family: "Montserrat";
-}
-
 .btn {
-    /*El boton lo haremos que el borde sea transparaente con un color de fondo rojo, como el grabar de una camara
-    El radius, es el mismo que tiene el icono del Youtube, me parecio bien dale ese toque, padding para aumentar el tamaño
-    */
+    font-family: "Poppins", sans-serif;
     font-size: 30px;
     border: 4px solid transparent;
     background-color: red;
     color: white;
     border-radius: 30px/20px;
     padding: 8px 24px;
-    box-shadow: 0px 0px 7px 8px #ff00004d;
-    transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.4s ease;
     font-weight: 700;
 }
-@media only screen and (max-width: 633px) {
+@media only screen and (max-width: 768px) {
     .btn {
         font-size: 20px;
         font-weight: 800;
+        padding: 4px 20px;
     }
 }
 @media only screen and (max-width: 473px) {
     .btn {
         font-size: 10px;
         font-weight: 1000;
+        padding: 4px 20px;
     }
 }
 
 .btn:hover {
-    box-shadow: 0px 0px 7px 15px #ff00004d;
+    box-shadow: 0px 0px 8px 16px #c60a0a78;
 }
 
 .btn.small {
-    border-width: 2px;
-    padding: 4px 17px;
     font-size: 1rem;
     font-weight: 800;
+    padding: 4px 17px;
 }
-.btn.small:hover {
-    border-width: 2px;
-    padding: 4px 17px;
-    font-size: 1rem;
-    font-weight: 800;
+@media only screen and (max-width: 1337px) {
+    .btn.small {
+        font-size: 1.7rem;
+        font-weight: 800;
+        padding: 3px 20px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .btn.small {
+        font-size: 1.5rem;
+        font-weight: 800;
+        padding: 5px 25px;
+    }
+}
+@media only screen and (max-width: 473px) {
+    .btn.small {
+        font-size: 1.2rem;
+        font-weight: 900;
+        padding: 0px 18px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .btn.small {
+        font-size: 0.8rem;
+        font-weight: 1000;
+        padding: 0px 15px;
+    }
 }

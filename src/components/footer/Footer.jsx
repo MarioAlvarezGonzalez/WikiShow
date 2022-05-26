@@ -10,7 +10,7 @@ import './footer.scss';
 //No hay mucho que entender es un html con añadidos de Link
 const Footer = () => {
     return (
-        <div className="footer" style={{backgroundImage: `url(${background})`}}>
+        <div className="footer" style={{ backgroundImage: `url(${background})` }}>
             <div className="footer__content container">
                 <div className="footer__content__logo">
                     <div className="logo">
@@ -20,21 +20,31 @@ const Footer = () => {
                 </div>
                 <div className="footer__content__menus">
                     <div className="footer__content__menu">
-                        <Link to="/">Home</Link>
-                        <Link to="/">Contact us</Link>
-                        <Link to="/">Term of services</Link>
-                        <Link to="/">About us</Link>
+                        <Link to="/"><h3>THE BASICS</h3></Link>
+                        <Link to="/">About TMDB</Link>
+                        <Link to="/">Contact</Link>
+                        <Link to="/">Help forums</Link>
+                        <Link to="/">API</Link>
+                        <Link to="/">System status</Link>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">Live</Link>
-                        <Link to="/">FAQ</Link>
-                        <Link to="/">Premium</Link>
-                        <Link to="/">Pravacy policy</Link>
+                        <Link to="/"><h3>PARTICIPATES</h3></Link>
+                        <Link to="/">Contribution Guide</Link>
+                        <Link to="/">Add new movie</Link>
+                        <Link to="/">Add new tv show</Link>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">You must watch</Link>
-                        <Link to="/">Recent release</Link>
-                        <Link to="/">Top IMDB</Link>
+                        <Link to="/"><h3>COMMUNITY</h3></Link>
+                        <Link to="/">Guidelines</Link>
+                        <Link to="/">Discussions</Link>
+                        <Link to="/">Leaderboard</Link>
+                        <Link to="/">Twitter</Link>
+                    </div>
+                    <div className="footer__content__menu">
+                        <Link to="/"><h3>LEGAL</h3></Link>
+                        <Link to="/">Terms of use</Link>
+                        <Link to="/">API Terms of Use</Link>
+                        <Link to="/">Privacy Policy</Link>
                     </div>
                 </div>
             </div>

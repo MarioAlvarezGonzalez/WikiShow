@@ -4,7 +4,7 @@ import './page-header.scss';
 
 import bg from '../../assets/footer-background.jpg';
 
-const PageHeader = props => {
+const PageHeader = () => {
     return (
         <div className="page-header" style={{backgroundImage: `url(${bg})`}}/>
     );

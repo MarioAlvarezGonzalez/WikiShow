@@ -1,7 +1,4 @@
-//Importamos todas las librerias que necesitamos
-
 import React, { useRef, useEffect } from 'react';
-
 import { Link } from 'react-router-dom';
 import Button from '../button/Button';
 
@@ -39,35 +36,33 @@ const header_person = [
 
 const Header = () => {
 
-    const headerRef = useRef(null);
-    //Con esto pillamos la referencia al Header para posteriormente llamarlo a modificar
-
-    //El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. 
-    //En caso contrario devuelve -1.
+    const header = useRef(null);
 
     useEffect(() => {
-        const shrinkHeader = () => {
-            if (document.documentElement.scrollTop > 10) {
-                headerRef.current.classList.add('shrink');
+        const vanish = () => {
+            if (document.documentElement.scrollTop > 20) 
+            {
+                header.current.classList.add('vanish');
             } else {
-                headerRef.current.classList.remove('shrink');
+                header.current.classList.remove('vanish');
             }
         }
-        window.addEventListener('scroll', shrinkHeader);
+        window.addEventListener('scroll', vanish);
         return () => {
-            window.removeEventListener('scroll', shrinkHeader);
+            window.removeEventListener('scroll', vanish);
         };
+
     }, []);
 
     return (
-        <div ref={headerRef} className="header">
-            <div className="header__wrap container">
+       <div ref={header} className="header">
+            <div className="header_container">
                 <div className="logo">
-                    <img src={logo} alt="" />
-                    <Link to="/">WiKiSHOW</Link>
+                    <img src={logo}/>
+                    <Link to="/">WikiShow</Link>
                 </div>
             </div>
-            <ul className="header__nav">
+            <ul className="header_menu">
                 {
                     header_home.map((index_home) => (
                         <li key={index_home}>
