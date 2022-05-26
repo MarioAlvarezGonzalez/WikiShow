@@ -4,11 +4,11 @@ import queryString from 'query-string';
 import AccessApi from './AccessApi';
 
 const AxiosUser = axios.create({
-    baseURL: AccessApi.baseUrl,
+    baseURL: AccessApi.link,
     headers: {
         'Content-Type': 'application/json'
     },
-    paramsSerializer: params => queryString.stringify({...params, api_key: AccessApi.apiKey})
+    paramsSerializer: params => queryString.stringify({...params, api_key: AccessApi.key})
 });
 
 AxiosUser.interceptors.request.use(async (config) => config);
