@@ -1,10 +1,9 @@
-@use "../../scss/" as *;
 
 .hero-slide {
     margin-bottom: 6rem; //Separamos el hero slide, del resto de componentes
 }
 
-.hero-slide__item {
+.hero-slide_item {
     padding: 13.2rem 0; //Hacemos que el hero slide sea bastante grande para separar la pagina como en sectores
     width: 100%; //Establecemos el tamaño 100% es lo normal
     background-position: center; //Lo posicionamos en el centro
@@ -29,21 +28,16 @@
         left: 0;
         width: 100%;
         height: 120px; //Decimos cuanto se come de la imagen
-        background-image: linear-gradient(
-            to top,
-            #0f0f0f,
-            rgba(#0f0f0f, 0)
-        ); //Creamos una linea hacia arriba que dara ese detalle
     }
 
-    &__content {
+    &_video {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        &__info {
+        &_information {
             width: 60%;
-            padding: 0 5rem; //Con esto decimos la localizacion de la info de la pelicula y donde se colocara, cuidado
+            padding: 0 5rem; //Con esto decimos la localizacion de la information de la pelicula y donde se colocara, cuidado
             position: relative;
 
             @media only screen and (max-width: 820px) {
@@ -51,7 +45,7 @@
             }
 
             & > * ~ * {
-                margin-top: 2.5rem; //Seperacion entre el titulo/informacion/botones
+                margin-top: 2.5rem; //Seperacion entre el titulo/informationrmacion/botones
             }
 
             .title {
@@ -65,23 +59,29 @@
             }
 
             .overview {
-                font-weight: 700; //Tamaño de la info
+                font-weight: 700; //Tamaño de la information
             }
 
             .btns > * ~ * {
-                
                 margin-left: 0.7rem; //Separacion entre los botones
             }
 
-            .btns,
-            .title,
-            .overview {
+            .btns{
                 opacity: 0; //MUY IMPORTANTE, establecemos la opacidad 0, haciendo asi, que aparezcan 1 a 1, si pones mas de 0 aparecera y luego hara la animacion y queda muy raro
+                transition: transform 0.6s ease, opacity 0.6s ease;
+            }
+            .title{
+                opacity: 0;
+                transition: transform 0.6s ease, opacity 0.6s ease;
+
+            }
+            .overview {
+                opacity: 0;
                 transition: transform 0.6s ease, opacity 0.6s ease;
             }
         }
 
-        &__poster {
+        &_poster {
             flex: 1;
             display: flex;
             align-items: center;
@@ -96,13 +96,13 @@
         }
     }
 
-    &.active > &__content > &__content__poster {
+    &.active > &_video > &_video_poster {
         img {
             transform: scale(1); //Una vez que necesitamos algo, pasara a activo y lo mostraremos
         }
     }
 
-    &.active > &__content > &__content__info {
+    &.active > &_video > &_video_information {
         .btns,
         .title,
         .overview {
@@ -120,5 +120,24 @@
         .btns {
             transition-delay: 1.5s, 1.5s;
         }
+    }
+}
+
+.bx-caret-left {
+    font-size: 35px;
+    color: white;
+    
+    @media only screen and (max-width: 767px) {
+        display: none;;
+    }
+}
+
+
+.bx-caret-right {
+    font-size: 35px;
+    color: white;
+    
+    @media only screen and (max-width: 767px) {
+        display: none;;
     }
 }

@@ -14,22 +14,21 @@ const Modal = props => {
     );
 }
 
-export const ModalContent = props => {
+export const ModalVideo = props => {
 
-
-    const contentRef = useRef(null);
+    const videoRef = useRef(null);
 
     //Importante si esta propiedad si cerramos el trailer, se seguira reproduciendo en segundo plano
     const closeModal = () => {
-        contentRef.current.parentNode.classList.remove('active');
+        videoRef.current.parentNode.classList.remove('active');
         if (props.onClose) props.onClose();
     }
 
     //Con este return conseguimos que apareza el trailer
     return (
-        <div ref={contentRef} className="modal__content">
+        <div ref={videoRef} className="modal_video">
             {props.children}
-            <div className="modal__content__close" onClick={closeModal}>
+            <div className="modal_video_close" onClick={closeModal}>
                 <i className="bx bx-x"></i>
             </div>
         </div>

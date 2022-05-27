@@ -1,13 +1,11 @@
 import React from 'react';
-
-import './movie-card.scss';
-
 import { Link } from 'react-router-dom';
 
 import Button from '../button/Button';
-
 import { category } from '../../api/ConfigApi';
 import ImagesApi from '../../api/ImagesApi';
+
+import './movie-card.scss';
 
 const MovieCard = props => {
 
@@ -27,7 +25,7 @@ const MovieCard = props => {
                 <div className="person-card" style={{ backgroundImage: `url(${bg_person})` }}>
                     <h1 className="vote-average">{item.vote_average}</h1>
                     <Button>
-                        <i className="bx bx-search"></i><p className='movie-over'>{item.overview || item.name}</p>
+                        <i className="bx bx-search"></i><p className='movie-over'>{item.overview || item.name || item.title || item.tagline }</p>
                     </Button>
                 </div>
             </div>
@@ -35,5 +33,4 @@ const MovieCard = props => {
         </Link>
     );
 }
-
 export default MovieCard;

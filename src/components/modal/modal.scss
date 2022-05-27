@@ -1,17 +1,16 @@
-@use "../../scss/" as *;
 
 .modal {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;  //Importante sin esta propiedad no sale el trailer
-    z-index: 4;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0; //Importante poner estas propiedades en 0, para que este en el centro
     opacity: 0; //De inicio no aparecera y una vez clicemos aparecera
-    background-color: rgba($color: $black, $alpha: 0.8);
+    background-color: rgba($color: black, $alpha: 0.8);
     visibility: hidden; //Muy importante si no estara en negro, por defecto esta oculto el trailer
 
     &.active {
@@ -19,10 +18,10 @@
         visibility: visible; //Visible si activamos el boton
     }
 
-    &__content {
+    &_video {
         padding: 0.9rem;
         background-color: black; //Para que el trailer no quede "feo" le añado un borde con el padding y un color negro
-        width: 60%;
+        width: 90%;
         opacity: 0;
         transition: opacity 0.9s ease;
 
@@ -31,7 +30,7 @@
         }
 
         //Esto es el css de la x del reproductor del video
-        &__close {
+        &_close {
             position: absolute; //Siempre este situado y nunca se mueva
             right: 1px; //Ensayo y error
             top: -3px; //Ensayo y error
@@ -44,7 +43,7 @@
         }
     }
 
-    &.active &__content { 
+    &.active &_video { 
         opacity: 1; //Para que aparezca el video, si no carga el resto de cosas pero el video en si no se podra ver, pero si reproducir
         transform: translateY(0); //Para que la X se quede en la esquina del video y no de la pantalla
     }

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-import './movie-list.scss';
-
 import { SwiperSlide, Swiper } from 'swiper/react';
 
 import ConfigApi, { category } from '../../api/ConfigApi';
-
 import MovieCard from '../movie-card/MovieCard';
+
+import './movie-list.scss';
 
 const MovieList = props => {
 
@@ -16,7 +14,6 @@ const MovieList = props => {
         const getList = async () => {
             let response = null;
             const params = {};
-
             if (props.type !== 'similar') {
                 switch (props.category) {
                     case category.movie:
@@ -39,7 +36,7 @@ const MovieList = props => {
             <div className="movie-list">
                 <Swiper
                     grabCursor={true}
-                    spaceBetween={10}
+                    spaceBetween={9}
                     slidesPerView={'auto'}
                 >
                     {

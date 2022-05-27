@@ -33,8 +33,6 @@ const MovieGrid = props => {
                     default:
                     case category.person:
                         response = await ConfigApi.getPersonList(personType.popular, { params });
-
-
                 }
             } else {
                 const params = {
@@ -48,7 +46,7 @@ const MovieGrid = props => {
         getList();
     }, [props.category, keyword]);
 
-    const loadMore = async () => {
+    const LoadMore = async () => {
         let response = "";
         if (keyword === undefined) {
             const params = {
@@ -89,8 +87,8 @@ const MovieGrid = props => {
             </div>
             {
                 page < totalPage ? (
-                    <div className="movie-grid__loadmore">
-                        <Button className="small" onClick={loadMore}>Load more</Button>
+                    <div className="movie-grid_more">
+                        <Button className="small" onClick={LoadMore}>Load more</Button>
                     </div>
                 ) : ""
             }
@@ -101,10 +99,9 @@ const MovieGrid = props => {
 const MovieSearch = props => {
 
     const history = useHistory();
-
     const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '');
 
-    const goToSearch = useCallback(
+    const search = useCallback(
         () => {
             if (keyword.trim().length > 0) {
                 history.push(`/${category[props.category]}/search/${keyword}`);
@@ -117,24 +114,24 @@ const MovieSearch = props => {
         const enterEvent = (e) => {
             e.preventDefault();
             if (e.keyCode === 13) {
-                goToSearch();
+                search();
             }
         }
         document.addEventListener('keyup', enterEvent);
         return () => {
             document.removeEventListener('keyup', enterEvent);
         };
-    }, [keyword, goToSearch]);
+    }, [keyword, search]);
 
     return (
         <div className="movie-search">
             <Input
                 type="text"
-                placeholder="Type here to search"
+                placeholder="Write here to search"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
             />
-            <Button className="small" onClick={goToSearch}>
+            <Button className="small" onClick={search}>
                  <i className="bx bx-search"></i>
             </Button>
         </div>

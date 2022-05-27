@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../button/Button';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import MovieCard from '../movie-card/MovieCard';
 
+import Button from '../button/Button';
+import MovieCard from '../movie-card/MovieCard';
+import ConfigApi from '../../api/ConfigApi';
 
 import './movie-button.scss';
 
-
-import ConfigApi from '../../api/ConfigApi';
-
-
-const SectionFooter = props => {
+const MovieButton = props => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
         const getList = async () => {
-            let response = null;
-
+            let response = "";
             if (props.type === 'similar') {
-
                 response = await ConfigApi.similar(props.category, props.id);
             }
             setItems(response.results);
         }
-        getList();
-    }, []);
+        getList()
+    }, [])
     return (
         <>
             <div className="movie-list">
+                <i className="bx bx-caret-left"></i>
+                <i className="bx bx-caret-right"></i>
                 <Swiper
                     grabCursor={true}
-                    spaceBetween={10}
+                    spaceBetween={9}
                     slidesPerView={'auto'}
                 >
                     {
@@ -41,6 +38,7 @@ const SectionFooter = props => {
                             </SwiperSlide>
                         ))
                     }
+
                 </Swiper>
             </div>
             <div className='section_footer'>
@@ -57,7 +55,6 @@ const SectionFooter = props => {
             </div>
         </>
     )
-
 }
 
-export default SectionFooter;
+export default MovieButton;
