@@ -6,7 +6,6 @@
 
     @media only screen and (max-width: 768px) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-
     }
 
     &_more {
@@ -22,20 +21,20 @@
 
     @media only screen and (max-width: 1336px) {
         margin-left: 28%;
-
     }
     @media only screen and (max-width: 768px) {
         margin-left: 10%;
-
     }
     @media only screen and (max-width: 425px) {
         margin-left: 0%;
-
     }
 
     input {
         width: 100%;
         text-align: left;
+        @media only screen and (max-width: 768px) {
+            width: 95%;
+        }
     }
 
     button {
@@ -43,10 +42,9 @@
         right: 0;
         top: 2px;
 
-         @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 425px) {
             right: 1px;
             top: 1px;
         }
     }
-
 }

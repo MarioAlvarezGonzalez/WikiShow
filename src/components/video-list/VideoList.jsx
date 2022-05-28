@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import './video-list.scss';
 
 import ConfigApi from '../../api/ConfigApi';
+
+import './video-list.scss';
 
 const VideoList = props => {
 
@@ -22,8 +22,8 @@ const VideoList = props => {
     return (
         <>
             {
-                videos.map((item, i) => (
-                    <Video key={i} item={item} />
+                videos.map((video, index) => (
+                    <Video key={index} video={video} />
                 ))
             }
         </>
@@ -32,29 +32,20 @@ const VideoList = props => {
 
 const Video = props => {
 
-    const item = props.item;
-
-    const iframeRef = useRef(null);
-
-    //Ensayo y error del tañamo del video
-    useEffect(() => {
-        const height = iframeRef.current.offsetWidth * 7.6 / 16 + 'px';
-        iframeRef.current.setAttribute('height', height);
-    }, []);
+    const video = props.video;
 
     return (
         <div className="video">
             <div className="video__title">
-                <h2 className='name-trailer'>{item.title || item.name}</h2>
+                <h2 className='name-trailer'>{video.title || video.name}</h2>
             </div>
             <iframe
-                src={`https://www.youtube.com/embed/${item.key}`}
-                ref={iframeRef}
+                src={`https://www.youtube.com/embed/${video.key}`}
+                title="name"
                 width="100%"
-                title="video"
+                height="660px"
             ></iframe>
         </div>
     )
 }
-
 export default VideoList;

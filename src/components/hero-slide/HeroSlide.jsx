@@ -48,7 +48,7 @@ const HeroSlide = () => {
         return (
             <Modal id={`modal_${film.id}`}>
                 <ModalVideo onClose={close}>
-                    <iframe ref={iframe} width="100%" height="700px" />
+                    <iframe ref={iframe} width="100%" height="900px" title='Name'/>
                 </ModalVideo>
             </Modal>
         )
@@ -140,7 +140,7 @@ const HeroSlideItem = props => {
                 </div>
 
                 <div className="hero-slide_item_video_poster">
-                    <img src={ImagesApi.original(film.poster_path)} />
+                    <img src={ImagesApi.original(film.poster_path)} alt="Se necesita alt para suprimir errores" />
                 </div>
                 <i className="bx bx-caret-right"></i>
             </div>

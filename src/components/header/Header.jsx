@@ -40,7 +40,7 @@ const Header = () => {
 
     useEffect(() => {
         const vanish = () => {
-            if (document.documentElement.scrollTop > 20) {
+            if (document.documentElement.scrollTop > 92) {
                 header.current.classList.add('vanish');
             } else {
                 header.current.classList.remove('vanish');
@@ -57,7 +57,7 @@ const Header = () => {
         <div ref={header} className="header">
             <div className="header_container">
                 <div className="logo">
-                    <img src={logo} />
+                    <img src={logo} alt="Se necesita alt para suprimir errores"/>
                     <Link to="/">WikiShow</Link>
                 </div>
             </div>

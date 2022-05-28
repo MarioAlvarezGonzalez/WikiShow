@@ -1,17 +1,10 @@
 @use "../../scss/variables" as *;
 
 .page-header {
-    padding: 4.5rem;
-    margin-bottom: 2rem;
     position: relative;
+    background-size: cover;
     background-repeat: no-repeat;
+    padding: 4.3rem;
+    margin-bottom: 2.5rem;
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background-image: linear-gradient(to top, #0f0f0f, rgba($black, 0));
-    }
 }
