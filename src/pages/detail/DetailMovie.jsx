@@ -4,7 +4,7 @@ import ConfigApi from '../../api/ConfigApi';
 import ImagesApi from '../../api/ImagesApi';
 
 import './detail.scss';
-import CastList from './CastList';
+import ParticipantsList from '../../components/participants-list/ParticipantsList';
 import VideoList from '../../components/video-list/VideoList';
 
 import MovieButton from '../../components/movie-button/MovieButton';
@@ -63,7 +63,7 @@ const DetailMovie = () => {
                                     <div className="section__header">
                                         <h2>Participation</h2>
                                     </div>
-                                    <CastList id={item.id} />
+                                    <ParticipantsList id={item.id} />
                                 </div>
                             </div>
                         </div>
