@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from '../components/button/Button';
-import HeroSlide from '../components/hero-slide/HeroSlide';
-import MovieList from '../components/movie-list/MovieList';
+import Button from './button/Button';
+import HeroSlide from './hero-slide/HeroSlide';
+import MovieList from './movie-list/MovieList';
 
 import { category, movieType, tvType } from '../api/ConfigApi';
 
