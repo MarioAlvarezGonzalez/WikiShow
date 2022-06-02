@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/WikiShow/static/css/main.81cf590c.chunk.css",
+    "main.js": "/WikiShow/static/js/main.e680492f.chunk.js",
+    "main.js.map": "/WikiShow/static/js/main.e680492f.chunk.js.map",
+    "runtime-main.js": "/WikiShow/static/js/runtime-main.43b86242.js",
+    "runtime-main.js.map": "/WikiShow/static/js/runtime-main.43b86242.js.map",
+    "static/css/2.2894c9e2.chunk.css": "/WikiShow/static/css/2.2894c9e2.chunk.css",
+    "static/js/2.836f4fc1.chunk.js": "/WikiShow/static/js/2.836f4fc1.chunk.js",
+    "static/js/2.836f4fc1.chunk.js.map": "/WikiShow/static/js/2.836f4fc1.chunk.js.map",
+    "index.html": "/WikiShow/index.html",
+    "static/css/2.2894c9e2.chunk.css.map": "/WikiShow/static/css/2.2894c9e2.chunk.css.map",
+    "static/css/main.81cf590c.chunk.css.map": "/WikiShow/static/css/main.81cf590c.chunk.css.map",
+    "static/js/2.836f4fc1.chunk.js.LICENSE.txt": "/WikiShow/static/js/2.836f4fc1.chunk.js.LICENSE.txt",
+    "static/media/Logo.5f0f4bac.JPG": "/WikiShow/static/media/Logo.5f0f4bac.JPG",
+    "static/media/boxicons.min.css": "/WikiShow/static/media/boxicons.cbd149c5.ttf",
+    "static/media/footer-background.ee3893bf.jpg": "/WikiShow/static/media/footer-background.ee3893bf.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43b86242.js",
+    "static/css/2.2894c9e2.chunk.css",
+    "static/js/2.836f4fc1.chunk.js",
+    "static/css/main.81cf590c.chunk.css",
+    "static/js/main.e680492f.chunk.js"
+  ]
+}
