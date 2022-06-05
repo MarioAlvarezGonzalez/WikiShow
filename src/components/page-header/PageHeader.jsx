@@ -6,7 +6,7 @@ import './page-header.scss';
 
 const PageHeader = () => {
     return (
-        <div className="page-header" style={{backgroundImage: `url(${background})`}}/>
+        <div className="page_header " style={{backgroundImage: `url(${background})`}}/>
     );
 }
 export default PageHeader;

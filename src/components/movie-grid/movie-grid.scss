@@ -1,4 +1,7 @@
-.movie-grid {
+.section_grid{
+    margin-bottom: 2rem;
+}
+.movie_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 40px;
@@ -13,7 +16,7 @@
     }
 }
 
-.movie-search {
+.movie_search {
     position: relative;
     width: 100%;
     max-width: 550px;

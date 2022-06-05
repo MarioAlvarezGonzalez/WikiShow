@@ -42,12 +42,12 @@ const MovieButton = props => {
                 </Swiper>
             </div>
             <div className='section_footer'>
-                <div className="section_footer_movie">
+                <div className="section_footer-movie">
                     <Link to="/movie">
                         <Button className="small">Go to Movies</Button>
                     </Link>
                 </div>
-                <div className="section_footer_tv">
+                <div className="section_footer-tv">
                     <Link to="/tv">
                         <Button className="small">Go to Tv</Button>
                     </Link>

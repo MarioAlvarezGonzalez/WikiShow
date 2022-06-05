@@ -77,10 +77,10 @@ const MovieGrid = props => {
 
     return (
         <>
-            <div className="section mb-2">
+            <div className="section_grid">
                 <MovieSearch category={props.category} keyword={keyword} />
             </div>
-            <div className="movie-grid">
+            <div className="movie_grid">
                 {
                     items.map((item, i) => <MovieCard category={props.category} item={item} key={i} />)
                 }
@@ -113,7 +113,7 @@ const MovieSearch = props => {
     useEffect(() => {
         const enterEvent = (e) => {
             e.preventDefault();
-            if (e.keyCode === 13) {
+            if (e.keyCode === 1) {
                 search();
             }
         }
@@ -124,7 +124,7 @@ const MovieSearch = props => {
     }, [keyword, search]);
 
     return (
-        <div className="movie-search">
+        <div className="movie_search">
             <Input
                 type="text"
                 placeholder="Write here to search"

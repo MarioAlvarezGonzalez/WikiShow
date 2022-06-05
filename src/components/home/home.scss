@@ -1,11 +1,7 @@
 .section {
     padding: 0 2rem;
 }
-.small-home {
-    margin-top: 1.3rem;
-    font-size: 21px;
-}
-.section__header {
+.section_header {
     text-align: center;
 }
 .first_category {
@@ -23,24 +19,24 @@
     margin-top: 6rem;
     margin-bottom: 1rem;
 }
-.small-home-trending-movie {
+.small_home-trending-movie {
     margin-top: -1rem;
     @media only screen and (max-width: 768px) {
         margin-top: 1rem;
     }
 }
-.small-home-rated-movies {
+.small_home-rated-movies {
     @media only screen and (max-width: 768px) {
         margin-top: 1rem;
     }
 }
-.small-home-trending-tv {
+.small_home-trending-tv {
     margin-top: 2rem;
     @media only screen and (max-width: 768px) {
         margin-top: 1.5rem;
     }
 }
-.small-home-rated-tv {
+.small_home-rated-tv {
     @media only screen and (max-width: 768px) {
         margin-top: 1rem;
     }

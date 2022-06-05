@@ -3,9 +3,9 @@ import { useParams } from 'react-router';
 import ConfigApi from '../../api/ConfigApi';
 import ImagesApi from '../../api/ImagesApi';
 
-import ParticipantsList from '../../components/participants-list/ParticipantsList';
-import VideoList from '../../components/video-list/VideoList';
-import MovieButton from '../../components/movie-button/MovieButton';
+import ParticipantsList from '../participants-list/ParticipantsList';
+import VideoList from '../video-list/VideoList';
+import MovieButton from '../movie-button/MovieButton';
 
 import './detail.scss';
 

@@ -25,7 +25,7 @@ export const personType = {
 
 const ConfigApi = {
     getMoviesList: (type, params) => {
-        const url = 'movie/' + movieType[type];
+        const url = '/movie/' + movieType[type];
         return AxiosUser.get(url, params);
     },
     getTvList: (type, params) => {

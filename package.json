@@ -1,7 +1,7 @@
 {
-  "homepage": "https://marioalvarezgonzalez.github.io/WikiShow/",
   "name": "react-wikishow",
   "version": "0.1.0",
+  "homepage": "https://marioalvarezgonzalez.github.io/WikiShow/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -22,9 +22,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

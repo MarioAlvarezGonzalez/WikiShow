@@ -21,15 +21,15 @@ const MovieCard = props => {
         y crearemos un h2 con el titulo del movie o el nombre de la persona */
         <Link to={link}>
 
-            <div className="movie-card" style={{ backgroundImage: `url(${bg_show})` }}>
-                <div className="person-card" style={{ backgroundImage: `url(${bg_person})` }}>
-                    <h1 className="vote-average">{item.vote_average}</h1>
+            <div className="movie_card" style={{ backgroundImage: `url(${bg_show})` }}>
+                <div className="person_card" style={{ backgroundImage: `url(${bg_person})` }}>
+                    <h1 className="vote_average">{item.vote_average}</h1>
                     <Button>
                         <i className="bx bx-search"></i><p className='movie-over'>{item.overview || item.name || item.title || item.tagline }</p>
                     </Button>
                 </div>
             </div>
-            <h2 className='name-card'>{item.title || item.name}</h2>
+            <h2 className='name_card'>{item.title || item.name}</h2>
         </Link>
     );
 }
