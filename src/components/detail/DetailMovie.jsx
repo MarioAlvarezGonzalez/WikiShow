@@ -19,7 +19,6 @@ const DetailMovie = () => {
         const getDetail = async () => {
             const response = await ConfigApi.detail(category, id, { params: {} });
             setItem(response);
-            window.scrollTo(0, 0);
         }
         getDetail();
     }, [category, id]);
@@ -65,12 +64,10 @@ const DetailMovie = () => {
                         </div>
 
                         <div className="container">
-                            <div className="section mb-3">
+                            <div className="section_movie">
                                 <VideoList id={item.id} />
                             </div>
-                            <div className="section mb-3">
-                                <div className="section__header mb-2">
-                                </div>
+                            <div className="section_similar">
                                 <MovieButton category={category} type="similar" id={item.id} />
                             </div>
 

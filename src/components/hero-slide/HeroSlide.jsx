@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-//Devuelve un valor con estado y una función para actualizarlo.
-//La función pasada a useEffect se ejecutará después de que el renderizado es confirmado en la pantalla.
-//En esencia, useRef es como una “caja” que puedes mantener en una variable mutable en su propiedad .current.
 
 import { useHistory } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,12 +15,12 @@ import './hero-slide.scss';
 
 const HeroSlide = () => {
 
-    //Creamos los items de las peliculas es decir el conjunto y estableceremos que peliculas aparecera, con un estado vacio en ambos claro 
     const [movies, setMovieItems] = useState(['']);
 
     /*Sincronizamos todas las peliculas , que pertenezcan a la primera pagina y haremos un try catch, donde esperamos la respuesta
     de la API, con el tipo de Peliculas populares, que pertenezcan a la pagina 1, es decir params, ahora esa respuesta la volcaremos en
     setMovieItems, y esa respuesta mediante el slice, la diviremos en 8 partes, es decir la cantidad de donde empieza y donde acaba*/
+
     useEffect(() => {
         const getMovies = async () => {
             const params = { page: 1 }
@@ -37,6 +34,7 @@ const HeroSlide = () => {
 
     /*Crearemos el Video, cogiendo las propiedades de peliculas, el evento onClose, es muy imporante para cuando cierras
     el media el video no se siga reproduciendo en un segundo plano*/
+
     const Video = props => {
 
         const film = props.film;
@@ -60,6 +58,7 @@ pensado para movil pero para PC sirve igual, decimos que queremos ver unicamente
 quedar en la mitad del slice de las peliculas.
 Ahora con las peliculas, haremos un mapeo para ir uno por uno,mostrando cada pelicula en cada swiper,
 sin estas propiedades aparecera un swiper sin contenido alguno, por lo tanto es obligatorio mapear el slide*/
+
     return (
         <div className="hero-slide">
             <Swiper
@@ -88,15 +87,18 @@ sin estas propiedades aparecera un swiper sin contenido alguno, por lo tanto es 
 const HeroSlideItem = props => {
 
     //El enlace useHistory nos permite acceder al objeto de historial de React Router.
+
     let history = useHistory();
 
     //Volcamos las propiedades de las peliculas en film, y configuramos el background con las propiedades de la API, como el poster
     //Si no encuentra el backdrop, cogera el poster es decir siempre tendra un fondo 
+
     const film = props.film;
 
     const background = ImagesApi.original(film.backdrop_path ? film.backdrop_path : film.poster_path);
 
     //El componente modal proporciona una base sólida para crear cuadros de diálogo, popovers, lightboxes o cualquier otra cosa.
+    
     const setModalSelected = async () => {
         const modal = document.querySelector(`#modal_${film.id}`);
 
